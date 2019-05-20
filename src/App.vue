@@ -28,13 +28,20 @@ export default {
 
         }
     },
+    set_size(){
+      var oW=document.documentElement.clientWidth/7.5;
+
+      document.querySelector('html').style.fontSize=oW+'px';
+    }
   },
   mounted(){
-    this.isphone()
+    this.isphone();
+    this.set_size();
   }
 }
 </script>
 
 <style>
-
+  @import url('assets/css/reset.css');
+  @import url('assets/css/icom.css');
 </style>

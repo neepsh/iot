@@ -1,6 +1,6 @@
 <template>
-    <div>
-      aaaaa
+    <div class="index">
+fghdfghdfg
     </div>
 </template>
 
