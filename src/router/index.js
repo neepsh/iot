@@ -10,6 +10,21 @@ export default new Router({
       component: resolve => require(['../components/web/index'], resolve),
       meta: {title: '主页'}
     },
+      {
+          path: '/web/server',
+          component: resolve => require(['../components/web/server'], resolve),
+          meta: {title: '服务支持'}
+      },
+      {
+          path: '/web/product',
+          component: resolve => require(['../components/web/product'], resolve),
+          meta: {title: '产品'}
+      },
+      {
+          path: '/web/cooperation',
+          component: resolve => require(['../components/web/cooperation'], resolve),
+          meta: {title: '合作'}
+      },
     {
       path: '/h5/index',
       component: resolve => require(['../components/h5/index'], resolve),

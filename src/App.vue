@@ -26,11 +26,32 @@
         </ul>
       </div>
     </header>
+    <header v-if="data.web_type=='web'" id="header">
+      <div class="header">
+        <div class="logo">
+          <img :src="data.logo" alt="logo">
+        </div>
+        <div class="nav">
+          <ul class="nav_list">
+            <li>首页</li>
+            <li>产品</li>
+            <li>服务支持</li>
+            <li>商务合作</li>
+            <li>在线商城</li>
+            <li>品牌故事</li>
+            <li>加入我们</li>
+            <li>关于我们</li>
+            <li>联系我们</li>
+          </ul>
+        </div>
+      </div>
+
+    </header>
     <div id="content">
       <router-view/>
     </div>
 
-    <footer id="footer">
+    <footer v-if="data.web_type=='h5'" id="footer">
 
       <div class="footer">
         <div class="footer_top">
@@ -46,6 +67,50 @@
         </div>
       </div>
     </footer>
+    <footer v-if="data.web_type=='web'" id="footer">
+      <div class="footer">
+        <div class="footer_top">
+          <div>网站首页</div>
+          <div>产品介绍</div>
+          <div>服务支持</div>
+          <div>商务合作</div>
+          <div>在线商城</div>
+          <div>品牌故事</div>
+          <div>加入我们</div>
+          <div>联系我们</div>
+        </div>
+        <div class="footers">
+          <div class="footer_item">
+            <nav>关于我们</nav>
+            <div>公司介绍</div>
+            <div>企业文化</div>
+            <div>我们的团队</div>
+            <div>公司地址</div>
+          </div>
+          <div class="footer_item">
+            <nav>在线商城</nav>
+            <div>免零钱交易</div>
+            <div>快速注册</div>
+            <div>消费查询</div>
+            <div>不定期优惠</div>
+          </div>
+          <div class="footer_item">
+            <nav>品牌故事</nav>
+            <div>公司新闻</div>
+          </div>
+          <div class="footer_item">
+            <nav>联系我们</nav>
+            <div>地址：南京市江宁区麒麟街道华清园5栋308室</div>
+            <div>电话：88888888</div>
+            <div>网址：www.njxbz.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_wz">
+        © Copyright © 2018 - 2020 luidea.com All rights reserved.  备案编号：苏ICP备18032956号
+      </div>
+
+    </footer>
 
   </div>
 </template>
@@ -57,6 +122,7 @@ export default {
   data(){
     return{
       data:{
+        logo:require('./assets/img/logo.png'),
         web_type:"h5"
       }
     }
@@ -143,108 +209,187 @@ export default {
   @import url('assets/css/reset.css');
   @import url('assets/css/icom.css');
 
-  /* h5 header*/
-  .header_logo{
-    height: 0.56rem;
-    width: 1.9rem;
-    background: url('assets/img/new_logo.png') no-repeat;
-    background-size: 100%;
-    margin-left:0.3rem; ;
-  }
-  #header{
-    height: 1.04rem;
-    background: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-  }
-  .header_menu{
-    font-size: 0.44rem;
-    color: #fff;
-    text-align: right;
-    padding-right: 0.44rem;
-    flex-grow: 3;
-  }
-  #header .nav_item{
-    border: none;
-    padding: 0;
-  }
-  .nav_item nav{
-    padding: 0 0.4rem;
-    line-height: 0.8rem;
-    border-bottom: 1px solid;
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
-    align-content: center;
-  }
-  .nav_item nav a{
-    text-align: left;
-    flex-grow: 3;
-  }
-  .nav_item i{
-    line-height: 0.8rem;
-    transition: 0.2s;
-    font-size: 0.3rem;
+  @media screen  and (max-width: 1170px){
+   /* h5 header*/
+   .header_logo{
+     height: 0.56rem;
+     width: 1.9rem;
+     background: url('assets/img/new_logo.png') no-repeat;
+     background-size: 100%;
+     margin-left:0.3rem; ;
+   }
+   #header{
+     height: 1.04rem;
+     background: #000;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: fixed;
+     width: 100%;
+     top: 0;
+     left: 0;
+     z-index: 10000;
+   }
+   .header_menu{
+     font-size: 0.44rem;
+     color: #fff;
+     text-align: right;
+     padding-right: 0.44rem;
+     flex-grow: 3;
+   }
+   #header .nav_item{
+     border: none;
+     padding: 0;
+   }
+   .nav_item nav{
+     padding: 0 0.4rem;
+     line-height: 0.8rem;
+     border-bottom: 1px solid;
+     display: flex;
+     justify-content: space-around;
+     text-align: left;
+     align-content: center;
+   }
+   .nav_item nav a{
+     text-align: left;
+     flex-grow: 3;
+   }
+   .nav_item i{
+     line-height: 0.8rem;
+     transition: 0.2s;
+     font-size: 0.3rem;
 
-    text-align: right;
-  }
-  .nav_list .nav_item li{
-    padding-left: 0.6rem;
-  }
-  .nav_item ul{
-    height: 0;
-    transition: 0.2s;
-    overflow: hidden;
-  }
-  .nav_list a{
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    color: #ffffff;
-  }
-  .nav_list{
-    position: fixed;
-    top: 1.04rem;
-    right: -60%;
-    width: 60%;
-    height: 100%;
-    background: #000;
-    color: #fff;
-    font-size: 0.4rem;
-    transition: 0.6s;
-  }
-  .nav_list li{
-    padding: 0 0.4rem;
-    line-height: 0.8rem;
-    border-bottom: 1px solid;
-  }
+     text-align: right;
+   }
+   .nav_list .nav_item li{
+     padding-left: 0.6rem;
+   }
+   .nav_item ul{
+     height: 0;
+     transition: 0.2s;
+     overflow: hidden;
+   }
+   .nav_list a{
+     display: inline-block;
+     height: 100%;
+     width: 100%;
+     color: #ffffff;
+   }
+   .nav_list{
+     position: fixed;
+     top: 1.04rem;
+     right: -60%;
+     width: 60%;
+     height: 100%;
+     background: #000;
+     color: #fff;
+     font-size: 0.4rem;
+     transition: 0.6s;
+   }
+   .nav_list li{
+     padding: 0 0.4rem;
+     line-height: 0.8rem;
+     border-bottom: 1px solid;
+   }
 
-/*  h5 content*/
-  #content{
-    margin-top: 1.0rem;
-  }
+   /*  h5 content*/
+   #content{
+     margin-top: 1.0rem;
+   }
 
 
-  /*h5 footer*/
+   /*h5 footer*/
 
-  .footer_top{
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-    color: #fff;
-  }
-  .footer{
-    background: #737f95;
-    padding: 1vh;
-    font-size: 0.28rem;
-    text-align: center;
-    line-height: 36px;
-    color: #fff;
+   .footer_top{
+     display: flex;
+     justify-content: space-around;
+     font-size: 14px;
+     color: #fff;
+   }
+   .footer{
+     background: #737f95;
+     padding: 1vh;
+     font-size: 0.28rem;
+     text-align: center;
+     line-height: 36px;
+     color: #fff;
+   }
+ }
+  @media screen  and ( min-width:1170px){
+    #app{
+      font-size: 12px ;
+    }
+    .header{
+      width:1200px;
+      margin: 0 auto;
+      line-height: 82px;
+      font-size: 19px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .nav_list{
+      height: 82px;
+      justify-content: flex-end;
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      height: 82px;
+    }
+    .logo img {
+      height: 82px;
+    }
+    .nav_list li{
+      line-height: normal;
+      padding: 0 14px;
+      border-right: 2px solid #958c8c;
+    }
+
+
+    .footer{
+      background: #2f2727;
+      color: #fff;
+    }
+    .footer_top>div{
+      float: left;
+      font-size: 24px;
+      padding:0 15px;
+      border-right: 2px solid #fff;
+    }
+    .footer_top>div:nth-last-of-type(1){
+      border: none;
+    }
+    .footer_top:after{
+      display: block;
+      content: "";
+      clear: both;
+    }
+    .footer_top{
+      width: 1200px;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+    .footers{
+      display: flex;
+      width: 1200px;
+      margin: 60px auto 0;
+      justify-content: space-around;
+    }
+    .footer_item{
+      font-size: 14px;
+      color: #fff;
+      line-height: 36px;
+    }
+    .footer_item>nav{
+      font-size: 18px;
+    }
+    .footer_wz{
+      text-align: center;
+      line-height: 72px;
+      background: #1f2022;
+      font-size: 18px;
+      color: #fff;
+    }
+
   }
 </style>
