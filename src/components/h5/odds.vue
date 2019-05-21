@@ -206,47 +206,6 @@
     background: #efefef;
   }
 
-
-  .header_logo{
-    height: 0.56rem;
-    width: 1.9rem;
-    background: url("../../assets/img/new_logo.png") no-repeat;
-    background-size: 100%;
-    margin-left:0.3rem; ;
-  }
-  #header{
-    height: 1.04rem;
-    background: #000;
-    opacity: 0.9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-  .header_menu{
-    font-size: 0.44rem;
-    color: #fff;
-    text-align: right;
-    padding-right: 0.44rem;
-    flex-grow: 3;
-  }
-  .nav_list{
-    position: fixed;
-    top: 1.04rem;
-    right: -60%;
-    width: 60%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    font-size: 0.4rem;
-    transition: 0.6s;
-  }
-  .nav_list li{
-    padding: 0 0.4rem;
-    line-height: 0.8rem;
-    border-bottom: 1px solid;
-  }
-
   #target{
     padding: 0.3rem;
     background: #fff;
@@ -388,9 +347,6 @@
     text-align: center;
     line-height: 36px;
     color: #fff;
-  }
-  .footer_wz{
-    text-align: center;
   }
 
   .odds >span{

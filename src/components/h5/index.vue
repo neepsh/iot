@@ -1,6 +1,6 @@
 <template>
     <div class="h5_index">
-      <header id="header">
+     <!-- <header id="header">
         <div class="header_logo"></div>
         <div class="header_menu"><i class="icon-0210"></i></div>
         <div class="header_list">
@@ -25,7 +25,7 @@
             <li><router-link to="contact">联系我们</router-link></li>
           </ul>
         </div>
-      </header>
+      </header>-->
 
       <div id="banner">
         <div class="banner">
@@ -139,7 +139,7 @@
           }
       },
       mounted(){
-          var oMenu=document.querySelector('.header_menu'),
+         /* var oMenu=document.querySelector('.header_menu'),
           oList=document.querySelector('.nav_list'),
           oIcon=document.querySelector('.icon-0252'),
           oUl=document.querySelector('.item_ul');
@@ -160,20 +160,20 @@
               if(ul_status){
                 oUl.style.height="0";
                 ul_status=false;
-                this.style.transform="rotate(0deg)"
+                this.style.transform="rotate(0deg)";
               }else {
                 ul_status=true;
 
-                this.style.transform="rotate(90deg)"
+                this.style.transform="rotate(90deg)";
                 oUl.style.height="3.2rem";
               }
-          }
+          }*/
       }
     }
 </script>
 
 <style scoped>
-  @import url('../../assets/css/icom.css');
+ /* @import url('../../assets/css/icom.css');
 
   body{
     background: #efefef;
@@ -223,7 +223,8 @@
   }
   .nav_item i{
     line-height: 0.8rem;
-    transition: 0.6s;
+    transition: 0.2s;
+    transition: 0.2s;
     font-size: 0.3rem;
 
     text-align: right;
@@ -233,7 +234,7 @@
   }
   .nav_item ul{
     height: 0;
-    transition: 0.6s;
+    transition: 0.2s;
     overflow: hidden;
   }
   .nav_list{
@@ -251,7 +252,7 @@
     padding: 0 0.4rem;
     line-height: 0.8rem;
     border-bottom: 1px solid;
-  }
+  }*/
 
   /* banner */
   .banner img{

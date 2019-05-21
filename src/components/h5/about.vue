@@ -1,22 +1,5 @@
 <template>
     <div class="h5_about">
-      <header id="header">
-        <div class="header_logo"></div>
-        <div class="header_menu"><i class="icon-0210"></i></div>
-        <div class="header_list">
-          <ul class="nav_list">
-            <li>首页</li>
-            <li>产品介绍</li>
-            <li>服务支持</li>
-            <li>商务合作</li>
-            <li>在线商城</li>
-            <li>品牌故事</li>
-            <li>加入我们</li>
-            <li>关于我们</li>
-            <li>联系我们</li>
-          </ul>
-        </div>
-      </header>
 
       <div id="content">
         <div class="banner"><img :src="banner" alt="#"></div>
@@ -101,47 +84,6 @@
   body{
     background: #efefef;
   }
-
-  .header_logo{
-    height: 0.56rem;
-    width: 1.9rem;
-    background: url("../../assets/img/new_logo.png") no-repeat;
-    background-size: 100%;
-    margin-left:0.3rem; ;
-  }
-  #header{
-    height: 1.04rem;
-    background: #000;
-    opacity: 0.9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-  .header_menu{
-    font-size: 0.44rem;
-    color: #fff;
-    text-align: right;
-    padding-right: 0.44rem;
-    flex-grow: 3;
-  }
-  .nav_list{
-    position: fixed;
-    top: 1.04rem;
-    right: -60%;
-    width: 60%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    font-size: 0.4rem;
-    transition: 0.6s;
-  }
-  .nav_list li{
-    padding: 0 0.4rem;
-    line-height: 0.8rem;
-    border-bottom: 1px solid;
-  }
-
 
   /* content */
 
