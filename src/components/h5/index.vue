@@ -97,22 +97,6 @@
           </div>
         </div>
       </div>
-      <footer id="footer">
-
-        <div class="footer">
-          <div class="footer_top">
-            <div>关于我们</div>
-            <div>产品下载</div>
-            <div>技术支持</div>
-            <div>商务合作</div>
-            <div>加入我们</div>
-          </div>
-          <div>
-            <p>联系电话：025-56566</p>
-            <p>商务合作：025-56566</p>
-          </div>
-        </div>
-      </footer>
     </div>
 </template>
 
@@ -139,35 +123,6 @@
           }
       },
       mounted(){
-         /* var oMenu=document.querySelector('.header_menu'),
-          oList=document.querySelector('.nav_list'),
-          oIcon=document.querySelector('.icon-0252'),
-          oUl=document.querySelector('.item_ul');
-
-          var nav_status=false,ul_status=false;
-
-          oMenu.onclick=function () {
-              if(nav_status){
-                oList.style.right='-60%';
-                nav_status=false
-              }else{
-                oList.style.right=0;
-                nav_status=true
-              }
-
-          };
-          oIcon.onclick=function () {
-              if(ul_status){
-                oUl.style.height="0";
-                ul_status=false;
-                this.style.transform="rotate(0deg)";
-              }else {
-                ul_status=true;
-
-                this.style.transform="rotate(90deg)";
-                oUl.style.height="3.2rem";
-              }
-          }*/
       }
     }
 </script>
@@ -260,7 +215,6 @@
   }
 
   #banner{
-    margin-top: 1.04rem;
     padding-bottom: 0.28rem;
     background: #efefef;
   }
@@ -399,23 +353,4 @@
   }
 
 
-  /*  footer */
-
-  .footer_top{
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-    color: #fff;
-  }
-  .footer{
-    background: #737f95;
-    padding: 1vh;
-    font-size: 0.28rem;
-    text-align: center;
-    line-height: 36px;
-    color: #fff;
-  }
-  .footer_wz{
-    text-align: center;
-  }
 </style>

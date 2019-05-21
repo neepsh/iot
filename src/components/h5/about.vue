@@ -42,23 +42,6 @@
         </div>
 
       </div>
-
-      <footer id="footer">
-
-        <div class="footer">
-          <div class="footer_top">
-            <div>关于我们</div>
-            <div>产品下载</div>
-            <div>技术支持</div>
-            <div>商务合作</div>
-            <div>加入我们</div>
-          </div>
-          <div>
-            <p>联系电话：025-56566</p>
-            <p>商务合作：025-56566</p>
-          </div>
-        </div>
-      </footer>
     </div>
 </template>
 
@@ -141,23 +124,4 @@
     opacity: 0.8;
   }
 
-
-
-  /* footer*/
-
-
-  .footer_top{
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-    color: #fff;
-  }
-  .footer{
-    background: #737f95;
-    padding: 1vh;
-    font-size: 0.28rem;
-    text-align: center;
-    line-height: 36px;
-    color: #fff;
-  }
 </style>

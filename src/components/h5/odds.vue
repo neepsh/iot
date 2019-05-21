@@ -1,24 +1,5 @@
 <template>
     <div class="odds">
-      <header id="header">
-        <div class="header_logo"></div>
-        <div class="header_menu"><i class="icon-0210"></i></div>
-        <div class="header_list">
-          <ul class="nav_list">
-            <li>首页</li>
-            <li>产品介绍</li>
-            <li>服务支持</li>
-            <li>商务合作</li>
-            <li>在线商城</li>
-            <li>品牌故事</li>
-            <li>加入我们</li>
-            <li>关于我们</li>
-            <li>联系我们</li>
-          </ul>
-        </div>
-      </header>
-
-
       <div id="contents">
 
         <div id="target">
@@ -162,22 +143,6 @@
         </div>
       </div>
 
-      <footer id="footer">
-
-        <div class="footer">
-          <div class="footer_top">
-            <div>关于我们</div>
-            <div>产品下载</div>
-            <div>技术支持</div>
-            <div>商务合作</div>
-            <div>加入我们</div>
-          </div>
-          <div>
-            <p>联系电话：025-56566</p>
-            <p>商务合作：025-56566</p>
-          </div>
-        </div>
-      </footer>
     </div>
 </template>
 
@@ -331,23 +296,6 @@
     background: #fff;
   }
 
-
-
-
-  .footer_top{
-    display: flex;
-    justify-content: space-around;
-    font-size: 14px;
-    color: #fff;
-  }
-  .footer{
-    background: #737f95;
-    padding: 1vh;
-    font-size: 0.28rem;
-    text-align: center;
-    line-height: 36px;
-    color: #fff;
-  }
 
   .odds >span{
     display: inline-block;

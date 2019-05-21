@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="h5_product">
+
+    </div>
 </template>
 
 <script>
@@ -11,3 +13,4 @@
 <style scoped>
 
 </style>
+

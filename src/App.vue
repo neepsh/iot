@@ -26,11 +26,32 @@
         </ul>
       </div>
     </header>
-    <router-view/>
+    <div id="content">
+      <router-view/>
+    </div>
+
+    <footer id="footer">
+
+      <div class="footer">
+        <div class="footer_top">
+          <div>关于我们</div>
+          <div>产品下载</div>
+          <div>技术支持</div>
+          <div>商务合作</div>
+          <div>加入我们</div>
+        </div>
+        <div>
+          <p>联系电话：025-56566</p>
+          <p>商务合作：025-56566</p>
+        </div>
+      </div>
+    </footer>
+
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App',
   data(){
@@ -73,14 +94,16 @@ export default {
     this.isphone();
     this.set_size();
 
+
     var oMenu=document.querySelector('.header_menu'),
       oList=document.querySelector('.nav_list'),
       oIcon=document.querySelector('.icon-0252'),
       oUl=document.querySelector('.item_ul');
 
-    var nav_status=false,ul_status=false;
+    var nav_status=false,ul_status=false,status=true;
 
     oMenu.onclick=function () {
+
       if(nav_status){
         oList.style.right='-60%';
         nav_status=false
@@ -89,7 +112,10 @@ export default {
         nav_status=true
       }
     };
-    oIcon.onclick=function () {
+
+    oIcon.addEventListener('click',function (e) {
+      status=false;
+      e.preventDefault();
       if(ul_status){
         oUl.style.height="0";
         ul_status=false;
@@ -98,9 +124,17 @@ export default {
         ul_status=true;
 
         this.style.transform="rotate(90deg)";
-        oUl.style.height="3.2rem";
+        oUl.style.height="3.27rem";
       }
-    }
+    },false);
+
+    oList.onclick=function(){
+      if (status){
+        oList.style.right='-60%';
+        nav_status=false
+      }
+      status=true;
+    };
   }
 }
 </script>
@@ -156,7 +190,6 @@ export default {
   .nav_item i{
     line-height: 0.8rem;
     transition: 0.2s;
-    transition: 0.2s;
     font-size: 0.3rem;
 
     text-align: right;
@@ -168,6 +201,12 @@ export default {
     height: 0;
     transition: 0.2s;
     overflow: hidden;
+  }
+  .nav_list a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
   }
   .nav_list{
     position: fixed;
@@ -184,5 +223,28 @@ export default {
     padding: 0 0.4rem;
     line-height: 0.8rem;
     border-bottom: 1px solid;
+  }
+
+/*  h5 content*/
+  #content{
+    margin-top: 1.0rem;
+  }
+
+
+  /*h5 footer*/
+
+  .footer_top{
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    color: #fff;
+  }
+  .footer{
+    background: #737f95;
+    padding: 1vh;
+    font-size: 0.28rem;
+    text-align: center;
+    line-height: 36px;
+    color: #fff;
   }
 </style>
