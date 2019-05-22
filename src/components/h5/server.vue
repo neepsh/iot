@@ -71,7 +71,7 @@
     font-size: 0.28rem;
     display: inline-block;
     padding: 0 0.41rem 0.15rem 0.41rem;
-    width: 1.28rem;
+    width: 1.48rem;
     border-bottom: 0.02rem solid #8da3ae;
     position: relative;
   }
@@ -80,7 +80,7 @@
     display: block;
     position: absolute;
     bottom: -0.02rem;
-    width: 1.28rem;
+    width: 1.48rem;
     height: 0.04rem;
     background: #ff7500;
     left: 0.41rem;
@@ -94,40 +94,17 @@
   .item{
     background: #fff;
     margin-bottom: 0.3rem;
-    padding: 0.3rem;
+    padding: 0  0.3rem;
     font-size: 0.24rem;
   }
-  .item_img img{
-    width: 80%;
-  }
-  .item_img{
-    text-align: center;
-  }
-  .item_flex{
-    display: flex;
-    justify-content: space-around;
-  }
-  .item_flex img{
-    width:2.9rem; ;
-  }
-  .item_flex>div:nth-of-type(2){
-    flex-grow: 2;
-    margin-left: 0.3rem;
-    font-size: 0.24rem;
-  }
-  .item_flex p{
-    line-height: 0.4rem;
-  }
-  .server{
-    font-size: 0.24rem;
-    display: flex;
-    justify-content: space-around;
-  }
-  .server img{
-    width: 2.18rem;
-  }
-  .server p{
-    line-height: 0.4rem;
-  }
+    .item li{
+        padding: 0.06rem  0;
+        line-height: 0.35rem;
+    }
 
+    .server_name{
+        font-size: 0.3rem;
+        line-height: 0.8rem;
+        font-weight: bold;
+    }
 </style>
