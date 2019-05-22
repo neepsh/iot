@@ -2,10 +2,13 @@
     <div class="web_product">
 
         <div id="banner">
-            <img :src="data.banner" alt="xbz">
+            <img :src="data.img1" alt="xbz">
+            <img :src="data.img2" alt="xbz">
+            <img :src="data.img3" alt="xbz">
+
         </div>
 
-        <div id="content">
+       <!-- <div id="content">
             <div class="item">
                 <nav class="nav">
                     <p>产品介绍</p>
@@ -67,7 +70,7 @@
                     </div>
                 </div>s
             </div>
-        </div>
+        </div>-->
     </div>
 </template>
 
@@ -77,9 +80,9 @@
         data(){
             return {
                 data:{
-                    banner:require('../../assets/img/index_banner_02.jpg'),
-                    product1:require('../../assets/img/index_banner_05.jpg'),
-                    product2:require('../../assets/img/index_banner_09.jpg'),
+                    img1:require('../../assets/img/products1.png'),
+                    img2:require('../../assets/img/products2.png'),
+                    img3:require('../../assets/img/products3.png'),
                 }
             }
         }
@@ -91,7 +94,7 @@
         width: 100%;
     }
 
-    #content{
+   /* #content{
         width: 1200px;
         padding-top: 55px;
         margin: 0 auto;
@@ -170,5 +173,5 @@
         background:#ffecd6;
     }
 
-
+*/
 </style>

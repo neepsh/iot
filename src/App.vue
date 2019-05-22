@@ -53,13 +53,14 @@
                 </div>
                 <div class="nav">
                     <ul class="nav_list">
-                        <li>首页</li>
-                        <li>产品</li>
-                        <li>服务支持</li>
-                        <li>商务合作</li>
-                        <li>在线商城</li>
+                        <li> <router-link to="index">首页</router-link></li>
+                        <li> <router-link to="product">产品</router-link></li>
+                        <li> <router-link to="server">服务支持</router-link></li>
+                        <li> <router-link to="cooperation">商务合作</router-link></li>
+                        <li> <router-link to="mall">在线商城</router-link></li>
+
                         <li class="nav_item">
-                            <nav><span>关于我们</span> <i class="icon-0252"></i></nav>
+                            <nav><router-link to="about"></router-link><span>关于我们</span> <i class="icon-0252"></i></nav>
                             <ul class="menu6">
                                 <li>
                                     <router-link to="index">产品介绍</router-link>
@@ -75,7 +76,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>联系我们</li>
+                        <li><router-link to="contact">联系我们</router-link> </li>
                     </ul>
                 </div>
             </div>
@@ -416,6 +417,7 @@
         }
         .nav_item{
             position: relative;
+            cursor: pointer;
         }
         @keyframes menu6 {
             0% {
