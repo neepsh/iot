@@ -58,9 +58,23 @@
                         <li>服务支持</li>
                         <li>商务合作</li>
                         <li>在线商城</li>
-                        <li>品牌故事</li>
-                        <li>加入我们</li>
-                        <li>关于我们</li>
+                        <li class="nav_item">
+                            <nav><span>关于我们</span> <i class="icon-0252"></i></nav>
+                            <ul class="menu6">
+                                <li>
+                                    <router-link to="index">产品介绍</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="odds">公司优势</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="join">会员加盟</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="join">发展规划</router-link>
+                                </li>
+                            </ul>
+                        </li>
                         <li>联系我们</li>
                     </ul>
                 </div>
@@ -350,6 +364,69 @@
     }
 
     @media screen  and ( min-width: 1170px) {
+
+        .nav_item:hover .menu6 li:first-of-type {
+            animation: menu6 0.3s ease-in-out forwards;
+            animation-delay: 0.2s;
+        }
+        .nav_item:hover .menu6 li:nth-of-type(2) {
+            animation: menu6 0.3s ease-in-out forwards;
+            animation-delay: 0.4s;
+        }
+        .nav_item:hover .menu6 li:nth-of-type(3) {
+            animation: menu6 0.3s ease-in-out forwards;
+            animation-delay: 0.6s;
+        }
+        .nav_item:hover .menu6 li:last-of-type {
+            animation: menu6 0.3s ease-in-out forwards;
+            animation-delay: 0.8s;
+        }
+        .nav_item:hover .icon-0252{
+            transform:rotate(70deg);
+        }
+        .menu6 li{
+            opacity: 0;
+            line-height: 36px;
+            background: #FFF;
+            width: 100px;
+            padding:  0 14px;
+        }
+        .menu6 a{
+            color: #000;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+        .menu6{
+            padding-top: 28px;
+            position: absolute;
+            top: 100%;
+            z-index: -10;
+            width: 100%;
+            left: -2px;
+            text-align: center;
+        }
+        .nav_item .icon-0252{
+            color: #7e8c8d;
+            transition: 0.3s;
+            transform:rotate(7deg);
+        }
+        .nav_item:hover .menu6{
+            z-index: 10;
+        }
+        .nav_item{
+            position: relative;
+        }
+        @keyframes menu6 {
+            0% {
+                opacity: 0;
+                transform: scale(2);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
         #app {
             font-size: 12px;
         }
@@ -378,7 +455,7 @@
             height: 82px;
         }
 
-        .nav_list li {
+        .nav_list>li {
             line-height: normal;
             padding: 0 14px;
             border-right: 2px solid #958c8c;
