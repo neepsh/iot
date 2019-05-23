@@ -28,7 +28,17 @@ export default new Router({
       {
           path: '/web/about',
           component: resolve => require(['../components/web/about'], resolve),
-          meta: {title: '合作'}
+          meta: {title: '关于我们'}
+      },
+      {
+          path: '/web/odds',
+          component: resolve => require(['../components/web/odds'], resolve),
+          meta: {title: '优势'}
+      },
+      {
+          path: '/web/join',
+          component: resolve => require(['../components/web/join'], resolve),
+          meta: {title: '加盟'}
       },
 
       /*h5*/
