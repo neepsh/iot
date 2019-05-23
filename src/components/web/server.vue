@@ -11,14 +11,14 @@
                     <span>Service and Support</span>
                 </nav>
                 <div class="servers_content">
-                    <nav>高保障多样化的保修服务</nav>
+                    <nav> <i class="icon-0838"></i> 高保障多样化的保修服务</nav>
                     <p>1、开发与使用支持：通过远程、现场方式，提供软硬件开发的技术指导，产品使用答疑。</p>
                     <p>2、培训：针对渠道、代理商、集成商的产品、开发、使用培训。</p>
                     <p>3、行业解决方案集成与推广：针对行业制定、征集行业解决方案。</p>
                     <p>4、开发定制服务：根据客户需求，提供产品软硬件定制服务。</p>
                 </div>
                 <div class="servers_content">
-                    <nav>服务内容</nav>
+                    <nav> <i class="icon-0329"></i> 服务内容</nav>
                     <p>1、培训支持：总部针对运营商进行统一运维技术培训，快速掌握设备运营基础技能。</p>
                     <p>2、技术支持：7*24小时视频技术指导，终身免费软件升级服务。</p>
                     <p>3、运营支持：总部针对运营商设备设备应用场景、营销活动、市场推广等营销型活动给予培训、策划、指导 更好打造区域消费理念。</p>
@@ -55,6 +55,7 @@
         width: 1200px;
         padding-top: 55px;
         margin: 0 auto;
+        margin-bottom: 60px;
     }
     .nav{
         text-align: center;
@@ -77,35 +78,26 @@
         left: 43%;
         padding: 0 10px;
     }
-
-
-    .product_content p{
-        line-height: 30px;
-    }
-
-    .item_info nav{
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    .item_info p{
-        font-size: 18px;
-        color: #656565;
-        line-height: 36px;
-    }
-
-    .product{
-        background:#ffecd6;
-        margin-top: 30px;
-    }
-    .product:nth-last-of-type(1){
+    .servers_content nav{
+        font-size: 25px;
+        font-weight: bold;
         margin-bottom: 30px;
     }
-    .product:nth-of-type(2n){
-        flex-direction: row-reverse;
-        background: none;
+    .servers_content{
+        margin-top: 40px;
     }
-    .product:nth-of-type(2n) .product_img{
-        background:#ffecd6;
+    nav>i{
+        color: #ff7500;
+        display: inline-block;
+        padding-right: 14px;
     }
+    .servers_content p{
+        line-height: 36px;
+        font-size: 14px;
+        color: #656565;
+    }
+
+
+
 
 </style>

@@ -1,33 +1,75 @@
 <template>
-    <div class="web_cooperation">
+    <!--商务合作-->
+    <div class="h5_cooperation">
+
         <div id="banner">
-            <img :src="data.banner" alt="">
+            <img :src="banner" alt="*">
         </div>
+
         <div id="content">
-            <nav class="nav">
-                <p>商务合作</p>
-                <span>Business cooperation</span>
-            </nav>
             <div class="item">
+                <nav class="nav">
+                    <div class="nav_name">商务合作</div>
+                    <div class="nav_info">一个分工明确，直达全国的商业模式</div>
+                </nav>
                 <div class="item_img">
-                    <img :src="data.item_img1" alt="">
+                    <img :src="item_img.img1" alt="#">
+                </div>
+                <div class="item_flex">
+                    <div>
+                        <img :src="item_img.img2" alt="#">
+                    </div>
+                    <div>
+                        <p>我们业务流程细化分工</p>
+                        <p>最专业，最有效，最优质的各个环节</p>
+                        <p>降低各环节成本</p>
+                        <p>从而提高整个行业模式和效率...</p>
+                    </div>
                 </div>
             </div>
-            <div class="item">
 
+            <div class="item">
+                <nav class="nav">
+                    <div class="nav_name">我们提供的服务</div>
+                    <div class="nav_info">一站式服务平台</div>
+                </nav>
+                <div class="server">
+                    <div>
+                        <p> <i class="icon-0334"></i>提供物料到仓以及物料到点 ，两种第三方物流方案提供加盟商选择</p>
+                        <p> <i class="icon-0334"></i>提供物料到仓以及物料到点 ，两种第三方物流方案提供加盟商选择</p>
+                        <p> <i class="icon-0334"></i>提供物料到仓以及物料到点 ，两种第三方物流方案提供加盟商选择</p>
+                    </div>
+                    <div>
+                        <img :src="item_img.img3" alt="#">
+                    </div>
+                </div>
             </div>
+
+            <div class="item">
+                <nav class="nav">
+                    <div class="nav_name">完美一平米盈利空间一一新开机会点</div>
+                    <div class="nav_info">我们的主要渠道</div>
+                </nav>
+                <div class="item_img">
+                    <img :src="item_img.img4" alt="#">
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "cooperation",
-        data(){
+        name: "Cooperation",
+        data() {
             return {
-                data:{
-                    banner:require('../../assets/img/hezuo_banner_02.jpg'),
-                    item_img1:require('../../assets/img/web_07.jpg'),
+                banner: require('../../assets/img/hezuo_banner_02.jpg'),
+                item_img: {
+                    img1: require('../../assets/img/web_item_03.jpg'),
+                    img2: require('../../assets/img/web_11.jpg'),
+                    img3: require('../../assets/img/web_15.jpg'),
+                    img4: require('../../assets/img/web_item_07.jpg'),
                 }
             }
         }
@@ -35,90 +77,15 @@
 </script>
 
 <style scoped>
-
-
-    #banner img{
+    #banner img {
         width: 100%;
     }
-
     #content{
         width: 1200px;
-        padding-top: 55px;
         margin: 0 auto;
     }
     .nav{
         text-align: center;
-        position: relative;
     }
-    .nav p{
-        font-size: 24px;
-        padding:0  200px 22px 200px;
-        width: 180px;
-        margin: 0 auto;
-        border-bottom: 2px solid #ff7500;
-    }
-    .nav span{
-        display: inline-block;
-        font-size: 18px;
-        color: #656565;
-        position: absolute;
-        bottom: -10px;
-        background: #fff;
-        left: 43%;
-        padding: 0 10px;
-    }
-
-    .product{
-        padding: 24px;
-        display: flex;
-        justify-content: space-around;
-    }
-    .product_name{
-        font-size: 24px;
-        padding-bottom:20px ;
-    }
-    .product_content{
-        width: 659px;
-    }
-    .product_content p{
-        line-height: 30px;
-    }
-    .item_info{
-        margin-top: 40px;
-        text-align: center;
-    }
-    .item_info nav{
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-    .item_info p{
-        font-size: 18px;
-        color: #656565;
-        line-height: 36px;
-    }
-    .product_img{
-        width: 359px;
-        height: 359px;
-        border-radius:50%;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        background: #fff;
-    }
-    .product{
-        background:#ffecd6;
-        margin-top: 30px;
-    }
-    .product:nth-last-of-type(1){
-        margin-bottom: 30px;
-    }
-    .product:nth-of-type(2n){
-        flex-direction: row-reverse;
-        background: none;
-    }
-    .product:nth-of-type(2n) .product_img{
-        background:#ffecd6;
-    }
-
 
 </style>

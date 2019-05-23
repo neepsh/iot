@@ -60,7 +60,7 @@
                         <li> <router-link to="mall">在线商城</router-link></li>
 
                         <li class="nav_item">
-                            <nav><router-link to="about"></router-link><span>关于我们</span> <i class="icon-0252"></i></nav>
+                            <nav><router-link to="about"><span>关于我们</span> <i class="icon-0252"></i></router-link></nav>
                             <ul class="menu6">
                                 <li>
                                     <router-link to="index">产品介绍</router-link>

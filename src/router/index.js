@@ -25,6 +25,13 @@ export default new Router({
           component: resolve => require(['../components/web/cooperation'], resolve),
           meta: {title: '合作'}
       },
+      {
+          path: '/web/about',
+          component: resolve => require(['../components/web/about'], resolve),
+          meta: {title: '合作'}
+      },
+
+      /*h5*/
     {
       path: '/h5/index',
       component: resolve => require(['../components/h5/index'], resolve),
