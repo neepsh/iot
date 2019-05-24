@@ -130,6 +130,7 @@
         border-top: 1px solid #c5c5c5;
         align-content: center;
         height: 40px;
+        cursor: pointer;
     }
     .item:nth-of-type(1) .name{
         border-top: none;

@@ -227,6 +227,9 @@
   }
 
   /* 产品*/
+  .product{
+      margin-top: 30px;
+  }
   .product_info{
     width: 281px;
     line-height: 24px;

@@ -23,8 +23,9 @@
 
                 </div>
             </div>
+            <div class="map"></div>
         </div>
-        <div class="map"></div>
+
     </div>
 </template>
 
@@ -70,7 +71,15 @@
     #banner img {
         width: 100%;
     }
-
+    .address_name{
+        margin-top: 30px;
+        font-size:30px ;
+        padding-bottom: 30px;
+    }
+    .address li{
+        line-height: 36px;
+        font-size: 18px;
+    }
     #content {
         width: 1200px;
         padding-top: 55px;
@@ -102,7 +111,7 @@
     }
 
     .map{
-        height: 7.5rem;
+        height: 5rem;
         margin-top: 0.3rem;
     }
 </style>

@@ -85,7 +85,7 @@
         <div id="content">
             <router-view/>
         </div>
-        <div class="side">
+        <div class="side" @click="side">
             <i class="icon-0482"></i>
         </div>
 
@@ -165,6 +165,19 @@
             }
         },
         methods: {
+            side(){
+
+                function smoothscroll() {
+
+                    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                    if (currentScroll > 0) {
+                        window.requestAnimationFrame(smoothscroll);
+                        window.scrollTo (0,currentScroll - (currentScroll/5));
+                    }
+                }
+                smoothscroll();
+
+            },
             isphone() {
                 var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
                 var ua = navigator.userAgent;
@@ -379,6 +392,7 @@
             right: 50px;
             color: #ff7500;
             font-size: 30px;
+            cursor: pointer;
             border: 1px solid #d3d3d3;
         }
 

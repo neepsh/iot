@@ -50,7 +50,12 @@ var router=new Router({
         {
             path: '/web/info',
             component: resolve => require(['../components/web/product_info'], resolve),
-            meta: {title: '联系我们'}
+            meta: {title: '产品详情'}
+        },
+        {
+            path: '/web/mall',
+            component: resolve => require(['../components/web/mall'], resolve),
+            meta: {title: '商城'}
         },
 
         /*h5*/
