@@ -27,7 +27,7 @@
                         </nav>
                         <ul class="item_ul">
                             <li>
-                                <router-link to="index">产品介绍</router-link>
+                                <router-link to="info">产品介绍</router-link>
                             </li>
                             <li>
                                 <router-link to="odds">公司优势</router-link>
@@ -63,7 +63,7 @@
                             <nav><router-link to="about"><span>关于我们</span> <i class="icon-0252"></i></router-link></nav>
                             <ul class="menu6">
                                 <li>
-                                    <router-link to="index">产品介绍</router-link>
+                                    <router-link to="info">产品介绍</router-link>
                                 </li>
                                 <li>
                                     <router-link to="odds">公司优势</router-link>
@@ -84,6 +84,9 @@
 
         <div id="content">
             <router-view/>
+        </div>
+        <div class="side">
+            <i class="icon-0482"></i>
         </div>
 
         <footer v-if="data.web_type=='h5'" id="footer">
@@ -156,7 +159,7 @@
         data() {
             return {
                 data: {
-                    logo: require('./assets/img/logo.png'),
+                    logo: require('./assets/img/logo.jpg'),
                     web_type: "h5"
                 }
             }
@@ -172,13 +175,13 @@
                 if (res.length > 0) {
 
                     if (this.$router.history.current.path.indexOf('phone') == -1) {
-                        this.$router.push({path: '/h5/index'});
+                       // this.$router.push({path: '/h5/index'});
                         this.data.web_type = "h5"
                     }
 
                 } else {
                     if (this.$router.history.current.path.indexOf('web') == -1) {
-                        this.$router.push({path: '/web/index'});
+                        // this.$router.push({path: '/web/index'});
                         this.data.web_type = "web"
                     }
 
@@ -365,6 +368,19 @@
     }
 
     @media screen  and ( min-width: 1170px) {
+        .side{
+            position: fixed;
+            bottom: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            right: 50px;
+            color: #ff7500;
+            font-size: 30px;
+            border: 1px solid #d3d3d3;
+        }
 
         .nav_item:hover .menu6 li:first-of-type {
             animation: menu6 0.3s ease-in-out forwards;

@@ -1,0 +1,108 @@
+<template>
+    <div class="web_contact">
+
+        <div id="banner">
+            <img :src="banner" alt="*">
+        </div>
+        <div id="content">
+
+
+            <div class="item">
+                <nav class="nav">
+                    <p>联系我们</p>
+                    <span>Cantact Us</span>
+                </nav>
+                <div class="address">
+                    <div class="address_name">联系方式</div>
+                    <ul>
+                        <li>公司电话：400-828-8251</li>
+                        <li>公司地址：江苏省南京市江宁区麒麟科创园华清园5栋</li>
+                        <li>公司邮编：210000</li>
+                        <li>公司邮箱：bd@njxbz.online</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="map"></div>
+    </div>
+</template>
+
+<script>
+    import tmap from '../../assets/js/map'
+    export default {
+        name: "contact",
+        data() {
+            return {
+                key: 'W37BZ-AECCX-PKG4I-ZVMUY-DXIBZ-CAFN7',
+                banner: require('../../assets/img/banner_about.png'),
+                company: require('../../assets/img/company.png'),
+
+            }
+        },
+        mounted() {
+            var _this=this;
+            tmap.map(this.key).then(qq=>{
+                var map = new qq.maps.Map(document.getElementsByClassName("map")[0], {//创建地图，设置中心点，缩放级别
+                    // 地图的中心地理坐标。
+                    center: new qq.maps.LatLng(32.02175940032968, 118.9049855092621),
+                    zoom: 14,
+                });
+                var infoWin = new qq.maps.InfoWindow({
+                    map: map
+                });
+
+                //open()打开信息窗口
+                infoWin.open();
+                infoWin.setPosition(map.getCenter());
+
+                //setContent()设置信息窗口显示区的内容
+                infoWin.setContent('<div style="display: flex;align-items: center">南京鑫倍泽物联科技 &nbsp  &nbsp<img style="height: 80px;width: 80px;" src="/static/img/company.4258702.png" /></div>');
+
+
+            })
+        }
+    }
+</script>
+
+<style scoped>
+
+    #banner img {
+        width: 100%;
+    }
+
+    #content {
+        width: 1200px;
+        padding-top: 55px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+
+    .nav {
+        text-align: center;
+        position: relative;
+    }
+
+    .nav p {
+        font-size: 24px;
+        padding: 0 200px 22px 200px;
+        width: 180px;
+        margin: 0 auto;
+        border-bottom: 2px solid #ff7500;
+    }
+    .nav span {
+        display: inline-block;
+        font-size: 18px;
+        color: #656565;
+        position: relative;
+        bottom: 12px;
+        background: #fff;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .map{
+        height: 7.5rem;
+        margin-top: 0.3rem;
+    }
+</style>

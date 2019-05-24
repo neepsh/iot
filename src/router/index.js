@@ -1,81 +1,131 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
+Vue.use(Router);
+var router=new Router({
+    routes: [
+        {
+            path: '/', redirect: '/web/index'
+        },
+        {
+            path: '/web/index',
+            component: resolve => require(['../components/web/index'], resolve),
+            meta: {title: '主页'}
+        },
+        {
+            path: '/web/server',
+            component: resolve => require(['../components/web/server'], resolve),
+            meta: {title: '服务支持'}
+        },
+        {
+            path: '/web/product',
+            component: resolve => require(['../components/web/product'], resolve),
+            meta: {title: '产品'}
+        },
+        {
+            path: '/web/cooperation',
+            component: resolve => require(['../components/web/cooperation'], resolve),
+            meta: {title: '合作'}
+        },
+        {
+            path: '/web/about',
+            component: resolve => require(['../components/web/about'], resolve),
+            meta: {title: '关于我们'}
+        },
+        {
+            path: '/web/odds',
+            component: resolve => require(['../components/web/odds'], resolve),
+            meta: {title: '优势'}
+        },
+        {
+            path: '/web/join',
+            component: resolve => require(['../components/web/join'], resolve),
+            meta: {title: '加盟'}
+        },
+        {
+            path: '/web/contact',
+            component: resolve => require(['../components/web/contact'], resolve),
+            meta: {title: '联系我们'}
+        },
+        {
+            path: '/web/info',
+            component: resolve => require(['../components/web/product_info'], resolve),
+            meta: {title: '联系我们'}
+        },
 
-export default new Router({
-  routes: [
-    {
-      path: '/web/index',
-      component: resolve => require(['../components/web/index'], resolve),
-      meta: {title: '主页'}
-    },
-      {
-          path: '/web/server',
-          component: resolve => require(['../components/web/server'], resolve),
-          meta: {title: '服务支持'}
-      },
-      {
-          path: '/web/product',
-          component: resolve => require(['../components/web/product'], resolve),
-          meta: {title: '产品'}
-      },
-      {
-          path: '/web/cooperation',
-          component: resolve => require(['../components/web/cooperation'], resolve),
-          meta: {title: '合作'}
-      },
-      {
-          path: '/web/about',
-          component: resolve => require(['../components/web/about'], resolve),
-          meta: {title: '关于我们'}
-      },
-      {
-          path: '/web/odds',
-          component: resolve => require(['../components/web/odds'], resolve),
-          meta: {title: '优势'}
-      },
-      {
-          path: '/web/join',
-          component: resolve => require(['../components/web/join'], resolve),
-          meta: {title: '加盟'}
-      },
+        /*h5*/
+        {
+            path: '/h5/index',
+            component: resolve => require(['../components/h5/index'], resolve),
+            meta: {title: '主页'}
+        },
+        {
+            path: '/h5/about',
+            component: resolve => require(['../components/h5/about'], resolve),
+            meta: {title: '关于我们'}
+        },
+        {
+            path: '/h5/contact',
+            component: resolve => require(['../components/h5/contact'], resolve),
+            meta: {title: '联系我们'}
+        },
+        {
+            path: '/h5/cooperation',
+            component: resolve => require(['../components/h5/cooperation'], resolve),
+            meta: {title: '商务合作'}
+        },
+        {
+            path: '/h5/join',
+            component: resolve => require(['../components/h5/join'], resolve),
+            meta: {title: '加入我们'}
+        },
+        {
+            path: '/h5/odds',
+            component: resolve => require(['../components/h5/odds'], resolve),
+            meta: {title: '优势'}
+        },
+        {
+            path: '/h5/server',
+            component: resolve => require(['../components/h5/server'], resolve),
+            meta: {title: '服务'}
+        },
+        {
+            path: '/h5/info',
+            component: resolve => require(['../components/h5/product_info'], resolve),
+            meta: {title: '产品详情'}
+        },
+        {
+            path:'*',
+            component: resolve => require(['../components/err'], resolve),
+            meta: {title: '404'}
+        }
+    ]
+});
 
-      /*h5*/
-    {
-      path: '/h5/index',
-      component: resolve => require(['../components/h5/index'], resolve),
-      meta: {title: '主页'}
-    },
-    {
-      path:'/h5/about',
-      component:resolve => require(['../components/h5/about'],resolve),
-      meta:{title:'关于我们'}
-    },
-    {
-      path:'/h5/contact',
-      component:resolve => require(['../components/h5/contact'],resolve),
-      meta:{title:'联系我们'}
-    },
-    {
-      path:'/h5/cooperation',
-      component:resolve => require(['../components/h5/cooperation'],resolve),
-      meta:{title:'商务合作'}
-    },
-    {
-      path:'/h5/join',
-      component:resolve => require(['../components/h5/join'],resolve),
-      meta:{title:'加入我们'}
-    },
-    {
-      path:'/h5/odds',
-      component:resolve => require(['../components/h5/odds'],resolve),
-      meta:{title:'优势'}
-    },
-    {
-      path:'/h5/server',
-      component:resolve => require(['../components/h5/server'],resolve),
-      meta:{title:'服务'}
+router.beforeEach((to,form,next)=>{
+
+    var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
+    var ua = navigator.userAgent;
+    var res = mobileArry.filter(function (arr) {
+        return ua.indexOf(arr) > 0;
+    });
+    if( res.length > 0 ){
+        if( to.path.indexOf('web')>0){
+            let address=to.path.replace('/web','/h5')
+            next(address)
+        }else {
+            next();
+        }
+    }else {
+        if (to.path.indexOf('h5')>0){
+            let w_address=to.path.replace('/h5','/web')
+            next(w_address)
+        }else {
+            next();
+        }
+
     }
-  ]
+    next()
 })
+
+export default router

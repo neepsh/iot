@@ -8,7 +8,14 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+/*var data=require('../src/assets/js/demo');
+var demo=express.Router()
 
+demo.get('/data',function (req,res) {
+    res.json({
+        data:data
+    })
+})*/
 
 module.exports = {
   context: path.resolve(__dirname, '../'),

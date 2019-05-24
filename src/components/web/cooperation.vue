@@ -100,7 +100,6 @@
         margin: 0 auto;
         border-bottom: 2px solid #ff7500;
     }
-
     .nav span {
         display: inline-block;
         font-size: 18px;
@@ -155,6 +154,5 @@
         padding-right: 15px;
         color: #ff7500;
     }
-
 
 </style>
