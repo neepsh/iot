@@ -2,9 +2,11 @@
     <div class="web_product">
 
         <div id="banner">
-            <img :src="data.img1" alt="xbz">
-            <img :src="data.img2" alt="xbz">
-            <img :src="data.img3" alt="xbz">
+            <router-link to="info">
+                <img :src="data.img1" alt="xbz">
+                <img :src="data.img2" alt="xbz">
+                <img :src="data.img3" alt="xbz">
+            </router-link>
 
         </div>
 
