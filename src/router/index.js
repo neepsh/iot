@@ -57,6 +57,15 @@ var router=new Router({
             component: resolve => require(['../components/web/mall'], resolve),
             meta: {title: '商城'}
         },
+        {
+            path: '/web/table',
+            component: resolve => require(['../components/web/table'], resolve),
+            meta: {title: '表格'}
+        },{
+            path: '/web/condition',
+            component: resolve => require(['../components/web/condition'], resolve),
+            meta: {title: '申请流程'}
+        },
 
         /*h5*/
         {
@@ -98,6 +107,11 @@ var router=new Router({
             path: '/h5/info',
             component: resolve => require(['../components/h5/product_info'], resolve),
             meta: {title: '产品详情'}
+        },
+        {
+            path: '/h5/mall',
+            component: resolve => require(['../components/web/product'], resolve),
+            meta: {title: '商城'}
         },
         {
             path:'*',

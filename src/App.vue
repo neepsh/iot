@@ -9,7 +9,7 @@
                         <router-link to="index">首页</router-link>
                     </li>
                     <li>
-                        <router-link to="index">产品介绍</router-link>
+                        <router-link to="mall">产品介绍</router-link>
                     </li>
                     <li>
                         <router-link to="server">服务支持</router-link>
@@ -258,6 +258,9 @@
     @import url('assets/css/reset.css');
     @import url('assets/css/icom.css');
 
+    .side {
+        display: none;
+    }
     @media screen  and (max-width: 1170px) {
 
         #app{
