@@ -1,0 +1,152 @@
+<template>
+    <div class="condition">
+        <nav class="nav">阿橙果啦理想的【运营商】需要具备以下基本条件:</nav>
+        <div class="item">
+            <div class="list">
+                <div class="list_name">良好的商业意识和经验</div>
+                <div>
+                    <p>★ 有成功的经商经历</p>
+                    <p>★ 具有创业精神</p>
+                    <p>★ 充分理解维果部落商业模式</p>
+                    <p>★ 具备餐饮/饮料/零售行业经验为佳</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="list_name">卓越的运营管理能力</div>
+                <div>
+                    <p>★ 有招募及管理团队的经验</p>
+                    <p>★ 重视员工的培养与团队建设</p>
+                    <p>★ 可胜任繁杂的的日常运营工作</p>
+                    <p>★ 善于处理政府及消费者关系</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="list_name">优秀的渠 道拓展能 力</div>
+                <div>
+                    <p>★ 有招募及管理团队的经验</p>
+                    <p>★ 重视员工的培养与团队建设</p>
+                    <p>★ 可胜任繁杂的的日常运营工作</p>
+                    <p>★ 善于处理政府及消费者关系</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="list_name">具备长远发展潜力</div>
+                <div>
+                    <p>★ 对特许经营事业有长远规划</p>
+                    <p>★ 具备管理更大规模市场的潜质</p>
+                </div>
+            </div>
+        </div>
+        <nav class="nav">这将是一项重大的投入和长期的合作，双方都应慎重评估。在我们收到 您填写的申请后，将按以下流程进行评估。</nav>
+        <div class="item">
+            <ul class="ctrl">
+                <li>
+                    <b></b>
+                    <span>1、申请人登陆官网申请页面，在线填写/提交表格。</span>
+                </li>
+                <li>
+                    <b></b>
+                    <span>2、公司招商部门电话回访。</span>
+                </li>
+                <li>
+                    <b></b>
+                    <span>3、公司对申请人运营资质进行评估。</span>
+                </li>
+                <li>
+                    <b></b>
+                    <span>4、评估通过，公司邀请运营商前来参观和洽谈。</span>
+                </li>
+                <li>
+                    <b></b>
+                    <span>5、双方签约，运营商付款。</span>
+                </li>
+                <li>
+                    <b></b>
+                    <span>6、运营商员工前往总部参加培训。</span>
+                </li>
+                <li>
+                    <b></b>
+                    <span> 7、终端交付，开始运营。</span>
+                </li>
+            </ul>
+        </div>
+        <div class="note">注：阿橙果啦理想的【加盟商】的符合标准，将由运营商基于以上基本原则、根据各地市场实际情形另行制订。</div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "condition",
+        mounted() {
+            var path = this.$router.history.current.path;
+            if (path.indexOf('table') > 0 || path.indexOf('condition') > 0 || path.indexOf('position') > 0) {
+                this.$parent.data.table_h5=true;
+            }else {
+                this.$parent.data.table_h5=false;
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+    .note{
+        padding: 0.3rem 0;
+    }
+    .ctrl{
+        width: 5.5rem;
+        margin: 0 auto;
+        padding-bottom: 0.3rem;
+    }
+    .ctrl b{
+        height: 1rem;
+        width: 0.2rem;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        background: #ff7500;
+    }
+    .ctrl span{
+        display: inline-block;
+        margin-left: 0.3rem;
+        font-size:0.24rem; ;
+    }
+
+    .ctrl li{
+        font-size: 0;
+        position: relative;
+        height: 1.2rem;
+    }
+    .item{
+        margin-top: 0.3rem;
+        border-bottom:1px solid #d9d9d9;
+
+    }
+    .list{
+        display: flex;
+        justify-content: space-around;
+    }
+    .list_name{
+        color: #ff7500;
+        width: 1.2rem;
+    }
+    .list>div:nth-of-type(2){
+        flex-grow: 3;
+        margin-left: 0.3rem;
+        padding-bottom: 0.25rem;
+    }
+    .list p{
+        padding-bottom: 0.25rem;
+    }
+    .nav{
+        font-size: 0.28rem;
+        color: #ff7500;border-bottom: 1px solid #d9d9d9;
+        padding: 0.2rem 0;
+    }
+    .condition{
+        padding: 0.3rem;
+        background: #fff;
+        font-size: 0.24rem;
+
+    }
+</style>

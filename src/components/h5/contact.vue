@@ -40,6 +40,12 @@
             }
         },
         mounted() {
+            var path = this.$router.history.current.path;
+            if (path.indexOf('table') > 0 || path.indexOf('condition') > 0 || path.indexOf('position') > 0) {
+                this.$parent.data.table_h5=true;
+            }else {
+                this.$parent.data.table_h5=false;
+            }
             var _this=this;
             tmap.map(this.key).then(qq=>{
                 var map = new qq.maps.Map(document.getElementsByClassName("map")[0], {//创建地图，设置中心点，缩放级别

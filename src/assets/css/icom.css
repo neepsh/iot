@@ -1,9 +1,7 @@
 @font-face {
     font-family: 'Rjdaoico';
  
-    src: 
-      url('../../../../xbz_iot/css/Rjdaoico.ttf?f7ueaf') format('truetype');
-      
+    src: url('Rjdaoico.ttf?f7ueaf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }

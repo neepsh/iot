@@ -100,6 +100,14 @@
                 img4:require('../../assets/img/coorp_26.jpg'),
               }
             }
+        },
+        mounted(){
+            var path = this.$router.history.current.path;
+            if (path.indexOf('table') > 0 || path.indexOf('condition') > 0 || path.indexOf('position') > 0) {
+                this.$parent.data.table_h5=true;
+            }else {
+                this.$parent.data.table_h5=false;
+            }
         }
     }
 </script>

@@ -41,6 +41,12 @@
                         </ul>
                     </li>
                     <li>
+                        <router-link to="condition">申请条件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="table">立刻申请</router-link>
+                    </li>
+                    <li>
                         <router-link to="contact">联系我们</router-link>
                     </li>
                 </ul>
@@ -53,14 +59,26 @@
                 </div>
                 <div class="nav">
                     <ul class="nav_list">
-                        <li> <router-link to="index">首页</router-link></li>
-                        <li> <router-link to="product">产品</router-link></li>
-                        <li> <router-link to="server">服务支持</router-link></li>
-                        <li> <router-link to="cooperation">商务合作</router-link></li>
-                        <li> <router-link to="mall">在线商城</router-link></li>
+                        <li>
+                            <router-link to="index">首页</router-link>
+                        </li>
+                        <li>
+                            <router-link to="product">产品</router-link>
+                        </li>
+                        <li>
+                            <router-link to="server">服务支持</router-link>
+                        </li>
+                        <li>
+                            <router-link to="cooperation">商务合作</router-link>
+                        </li>
+                        <li>
+                            <router-link to="mall">在线商城</router-link>
+                        </li>
 
                         <li class="nav_item">
-                            <nav><router-link to="about"><span>关于我们</span> <i class="icon-0252"></i></router-link></nav>
+                            <nav>
+                                <router-link to="about"><span>关于我们</span> <i class="icon-0252"></i></router-link>
+                            </nav>
                             <ul class="menu6">
                                 <li>
                                     <router-link to="info">产品介绍</router-link>
@@ -76,19 +94,36 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><router-link to="contact">联系我们</router-link> </li>
+                        <li>
+                            <router-link to="contact">联系我们</router-link>
+                        </li>
                     </ul>
                 </div>
             </div>
         </header>
 
         <div id="content">
+            <div class="nav_apply" v-if="data.table_h5">
+                <div class="apply">
+                    <div><router-link to="/h5/condition">如何申请</router-link></div>
+                    <!--<div>常见问题</div>-->
+                    <div><router-link to="/h5/table">在线申请</router-link></div>
+                </div>
+
+            </div>
             <router-view/>
         </div>
-        <div class="side" @click="side">
-            <i class="icon-0482"></i>
-        </div>
 
+
+        <div id="sidebar">
+            <div class="sidebar">
+                <router-link to="/web/table">立刻申请</router-link>
+            </div>
+            <div class="sidebar" @click="side">
+                <i class="icon-0482"></i>
+                <p> 回到顶部</p>
+            </div>
+        </div>
         <footer v-if="data.web_type=='h5'" id="footer">
 
             <div class="footer">
@@ -160,23 +195,23 @@
             return {
                 data: {
                     logo: require('./assets/img/logo.jpg'),
-                    web_type: "h5"
+                    web_type: "h5",
+                    table_h5: false
                 }
             }
         },
         methods: {
-            side(){
+            side() {
 
                 function smoothscroll() {
 
                     var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
                     if (currentScroll > 0) {
                         window.requestAnimationFrame(smoothscroll);
-                        window.scrollTo (0,currentScroll - (currentScroll/5));
+                        window.scrollTo(0, currentScroll - (currentScroll / 5));
                     }
                 }
                 smoothscroll();
-
             },
             isphone() {
                 var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
@@ -184,18 +219,34 @@
                 var res = mobileArry.filter(function (arr) {
                     return ua.indexOf(arr) > 0;
                 });
+                this.data.table_h5 = false;
+                var oSide = document.querySelector('#sidebar');
                 /*return res.length > 0;*/
                 if (res.length > 0) {
+                    var path = this.$router.history.current.path;
 
-                    if (this.$router.history.current.path.indexOf('phone') == -1) {
-                       // this.$router.push({path: '/h5/index'});
+                    if (path.indexOf('phone') == -1) {
                         this.data.web_type = "h5"
                     }
+                    oSide.style.display='none';
 
                 } else {
                     if (this.$router.history.current.path.indexOf('web') == -1) {
-                        // this.$router.push({path: '/web/index'});
                         this.data.web_type = "web"
+                    }
+                    oSide.style.display='none'
+
+                    if (oSide) {
+                        oSide.style.left = (document.documentElement.clientWidth - 1200) / 2 + 1200 + "px";
+                        window.addEventListener("scroll", function () {
+                            var top = document.documentElement.scrollTop;
+                            if (top > 300) {
+                                oSide.style.display = 'block';
+                            } else {
+                                oSide.style.display = 'none';
+                            }
+                        });
+
                     }
 
                 }
@@ -211,12 +262,12 @@
             this.set_size();
 
 
+            var nav_status = false, ul_status = false, status = true;
             var oMenu = document.querySelector('.header_menu'),
                 oList = document.querySelector('.nav_list'),
                 oIcon = document.querySelector('.icon-0252'),
                 oUl = document.querySelector('.item_ul');
 
-            var nav_status = false, ul_status = false, status = true;
 
             oMenu.onclick = function () {
 
@@ -258,14 +309,36 @@
     @import url('assets/css/reset.css');
     @import url('assets/css/icom.css');
 
-    .side {
-        display: none;
-    }
     @media screen  and (max-width: 1170px) {
 
-        #app{
+        .nav_apply {
+            margin: 0 auto;
+            background: #fff;
+            padding: 0.3rem 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav_apply > div {
+            width: 4.5rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .apply div {
+            font-size: 0.24rem;
+            padding-bottom: 0.16rem;
+        }
+
+        .nav_apply .active {
+            color: #ff7500;
+            border-bottom: 1px solid;
+        }
+
+        #app {
             background: #efefef;
         }
+
         /* h5 header*/
         .header_logo {
             height: 0.56rem;
@@ -384,54 +457,81 @@
     }
 
     @media screen  and ( min-width: 1170px) {
-        .side{
+        #sidebar {
             position: fixed;
-            bottom: 50px;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            width: 50px;
-            height: 50px;
-            right: 50px;
-            color: #ff7500;
+            bottom: 300px;
+            height: 200px;
+            width: 80px;
+            background: #ff7500;
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+
+        }
+
+        .sidebar a {
+            color: #fff;
+            display: inline-block;
+            padding-top: 20px;
+        }
+
+        .sidebar i {
             font-size: 30px;
+            line-height: 40px;
+        }
+
+        .sidebar:nth-of-type(1) {
+            border-bottom: 1px solid #fff;
+        }
+
+        .sidebar {
+            display: inline-block;
+            width: 40px;
             cursor: pointer;
-            border: 1px solid #d3d3d3;
+            text-align: center;
+            height: 100px;
         }
 
         .nav_item:hover .menu6 li:first-of-type {
             animation: menu6 0.3s ease-in-out forwards;
             animation-delay: 0.2s;
         }
+
         .nav_item:hover .menu6 li:nth-of-type(2) {
             animation: menu6 0.3s ease-in-out forwards;
             animation-delay: 0.4s;
         }
+
         .nav_item:hover .menu6 li:nth-of-type(3) {
             animation: menu6 0.3s ease-in-out forwards;
             animation-delay: 0.6s;
         }
+
         .nav_item:hover .menu6 li:last-of-type {
             animation: menu6 0.3s ease-in-out forwards;
             animation-delay: 0.8s;
         }
-        .nav_item:hover .icon-0252{
-            transform:rotate(70deg);
+
+        .nav_item:hover .icon-0252 {
+            transform: rotate(70deg);
         }
-        .menu6 li{
+
+        .menu6 li {
             opacity: 0;
             line-height: 36px;
             background: #FFF;
             width: 100px;
-            padding:  0 14px;
+            padding: 0 14px;
         }
-        .menu6 a{
+
+        .menu6 a {
             color: #000;
             display: inline-block;
             width: 100%;
             height: 100%;
         }
-        .menu6{
+
+        .menu6 {
             padding-top: 28px;
             position: absolute;
             top: 100%;
@@ -440,18 +540,22 @@
             left: -2px;
             text-align: center;
         }
-        .nav_item .icon-0252{
+
+        .nav_item .icon-0252 {
             color: #7e8c8d;
             transition: 0.3s;
-            transform:rotate(7deg);
+            transform: rotate(7deg);
         }
-        .nav_item:hover .menu6{
+
+        .nav_item:hover .menu6 {
             z-index: 10;
         }
-        .nav_item{
+
+        .nav_item {
             position: relative;
             cursor: pointer;
         }
+
         @keyframes menu6 {
             0% {
                 opacity: 0;
@@ -490,7 +594,7 @@
             height: 82px;
         }
 
-        .nav_list>li {
+        .nav_list > li {
             line-height: normal;
             padding: 0 14px;
             border-right: 2px solid #958c8c;

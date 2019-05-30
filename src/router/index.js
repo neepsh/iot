@@ -114,6 +114,20 @@ var router=new Router({
             meta: {title: '商城'}
         },
         {
+            path: '/h5/table',
+            component: resolve => require(['../components/h5/table'], resolve),
+            meta: {title: '申请表格'}
+        },
+        {
+            path: '/h5/condition',
+            component: resolve => require(['../components/h5/condition'], resolve),
+            meta: {title: '申请流程'}
+        },{
+            path: '/h5/question',
+            component: resolve => require(['../components/h5/Question'], resolve),
+            meta: {title: '常见问题'}
+        },
+        {
             path:'*',
             component: resolve => require(['../components/err'], resolve),
             meta: {title: '404'}
@@ -122,6 +136,7 @@ var router=new Router({
 });
 
 router.beforeEach((to,form,next)=>{
+    window.scrollTo(0,0)
 
     var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
     var ua = navigator.userAgent;
@@ -130,7 +145,8 @@ router.beforeEach((to,form,next)=>{
     });
     if( res.length > 0 ){
         if( to.path.indexOf('web')>0){
-            let address=to.path.replace('/web','/h5')
+            let address=to.path.replace('/web','/h5');
+
             next(address)
         }else {
             next();
@@ -138,6 +154,10 @@ router.beforeEach((to,form,next)=>{
     }else {
         if (to.path.indexOf('h5')>0){
             let w_address=to.path.replace('/h5','/web')
+            if(w_address.indexOf('question')>0){
+                w_address=w_address.replace('question','condition');
+            }
+
             next(w_address)
         }else {
             next();
