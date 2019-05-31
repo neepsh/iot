@@ -194,6 +194,9 @@
         padding: 0 50px;
     }
 
+    .company_p p{
+        width: 700px;
+    }
 
     /*企业文化*/
     .culture_name {

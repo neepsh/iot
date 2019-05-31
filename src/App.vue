@@ -114,6 +114,18 @@
             <router-view/>
         </div>
 
+      <!--  <div id="ie">
+            <h1>您当前的浏览器为ie或者为ie模式</h1>
+            <p>为了更好的体验请您按如下操作</p>
+            <div class="ie">
+                <div>
+                    <div>1、更换如下浏览器后重新进行访问</div>
+
+                </div>
+                <div></div>
+            </div>
+        </div>
+-->
 
         <div id="sidebar">
             <div class="sidebar">
@@ -270,6 +282,10 @@
             this.isphone();
             this.set_size();
 
+            if (!!window.ActiveXObject || "ActiveXObject" in window){
+
+                document.querySelector('#ie').style.display='block';
+            }
 
             var nav_status = false, ul_status = false, status = true;
             var oMenu = document.querySelector('.header_menu'),
@@ -466,6 +482,19 @@
     }
 
     @media screen  and ( min-width: 1170px) {
+        #ie{
+            text-align: center;
+            display: none;
+        }
+        #ie h1{
+            font-size: 26px;
+            color: #ff7500;
+            margin-top: 150px;
+        }
+        #ie p{
+            font-size: 20px;
+            margin-top: 60px;
+        }
         #sidebar {
             position: fixed;
             bottom: 300px;
