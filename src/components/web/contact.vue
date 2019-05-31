@@ -36,7 +36,7 @@
         data() {
             return {
                 key: 'W37BZ-AECCX-PKG4I-ZVMUY-DXIBZ-CAFN7',
-                banner: require('../../assets/img/banner_about.png'),
+                banner: require('../../assets/img/a_banner_02.jpg'),
                 company: require('../../assets/img/company.png'),
 
             }

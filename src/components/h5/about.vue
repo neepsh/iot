@@ -24,20 +24,30 @@
         </div>
         <div id="item">
           <div class="item">
-            <img :src="company.img1" alt="">
-            <p>品类介绍</p>
+              <router-link to="info">
+                  <img :src="company.img1" alt="">
+                  <p>品类介绍</p>
+              </router-link>
           </div>
           <div class="item">
-            <img :src="company.img2" alt="">
-            <p>公司优势</p>
+              <router-link to="odds">
+                  <img :src="company.img2" alt="">
+                  <p>公司优势</p>
+              </router-link>
           </div>
           <div class="item">
-            <img :src="company.img3" alt="">
-            <p>会员加盟</p>
+              <router-link to="join">
+                  <img :src="company.img3" alt="">
+                  <p>会员加盟</p>
+              </router-link>
+
           </div>
           <div class="item">
-            <img :src="company.img4" alt="">
-            <p>发展规划</p>
+              <router-link to="join">
+                  <img :src="company.img4" alt="">
+                  <p>发展规划</p>
+              </router-link>
+
           </div>
         </div>
 

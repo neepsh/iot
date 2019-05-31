@@ -115,6 +115,9 @@
                  </div>
              </div>
          </div>
+        <div class="btn">
+            <button>提交 </button>
+        </div>
     </div>
 </template>
 
@@ -138,8 +141,17 @@
 </script>
 
 <style scoped>
-
-
+    .btn{
+        padding: 0.3rem;
+        text-align: center;
+    }
+    .btn button{
+        width: 1.21rem;
+        height: 0.41rem;
+        border: none;
+        color: #fff;
+        background: #ff7500;
+    }
     .item>div{
         display: flex;
         justify-content: space-around;

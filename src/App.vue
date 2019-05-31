@@ -58,26 +58,26 @@
                     <img :src="data.logo" alt="logo">
                 </div>
                 <div class="nav">
-                    <ul class="nav_list">
-                        <li>
+                    <ul class="nav_list web_list">
+                        <li @click="show_li(0)" >
                             <router-link to="index">首页</router-link>
                         </li>
-                        <li>
+                        <li @click="show_li(1)" >
                             <router-link to="product">产品</router-link>
                         </li>
-                        <li>
+                        <li @click="show_li(2)" >
                             <router-link to="server">服务支持</router-link>
                         </li>
-                        <li>
+                        <li @click="show_li(3)" >
                             <router-link to="cooperation">商务合作</router-link>
                         </li>
-                        <li>
+                        <li @click="show_li(4)" >
                             <router-link to="mall">在线商城</router-link>
                         </li>
 
-                        <li class="nav_item">
+                        <li class="nav_item" @click="show_li(5)">
                             <nav>
-                                <router-link to="about"><span>关于我们</span> <i class="icon-0252"></i></router-link>
+                                <router-link to="about"><span>关于我们</span> <i></i></router-link>
                             </nav>
                             <ul class="menu6">
                                 <li>
@@ -94,7 +94,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li @click="show_li(6)">
                             <router-link to="contact">联系我们</router-link>
                         </li>
                     </ul>
@@ -201,8 +201,17 @@
             }
         },
         methods: {
-            side() {
+            show_li(num){
+                var aLi=document.querySelectorAll('.web_list li');
 
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].classList.remove('nav_active');
+                }
+
+                aLi[num].classList.add('nav_active')
+
+            },
+            side() {
                 function smoothscroll() {
 
                     var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -468,22 +477,27 @@
             text-align: center;
 
         }
-
+        .nav_active nav a{
+            color: #ff7500;
+        }
+        .nav_active a{
+            color: #ff7500;
+        }
+        .web_list a:hover{
+            color: #ff7500;
+        }
         .sidebar a {
             color: #fff;
             display: inline-block;
             padding-top: 20px;
         }
-
         .sidebar i {
             font-size: 30px;
             line-height: 40px;
         }
-
         .sidebar:nth-of-type(1) {
             border-bottom: 1px solid #fff;
         }
-
         .sidebar {
             display: inline-block;
             width: 40px;
@@ -512,8 +526,14 @@
             animation-delay: 0.8s;
         }
 
-        .nav_item:hover .icon-0252 {
-            transform: rotate(70deg);
+        .nav_item:hover i{
+            transform: rotate(135deg);
+        }
+        .menu6 li{
+            border-bottom: 1px solid #d9d9d9;
+        }
+        .menu6 li:nth-last-of-type(1){
+            border-bottom: none;
         }
 
         .menu6 li {
@@ -530,7 +550,6 @@
             width: 100%;
             height: 100%;
         }
-
         .menu6 {
             padding-top: 28px;
             position: absolute;
@@ -541,10 +560,15 @@
             text-align: center;
         }
 
-        .nav_item .icon-0252 {
+        .nav_item i {
             color: #7e8c8d;
             transition: 0.3s;
-            transform: rotate(7deg);
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-top: 3px solid;
+            border-right: 3px solid;
+            transform: rotate(45deg);
         }
 
         .nav_item:hover .menu6 {

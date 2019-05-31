@@ -40,7 +40,7 @@
         name: "server",
         data(){
             return {
-                banner:require('../../assets/img/hezuo_banner_02.jpg'),
+                banner:require('../../assets/img/server_banner_02.jpg'),
             }
         }
     }
