@@ -1,7 +1,7 @@
 <template>
     <div class="table">
         <div class="content">
-            <nav class="nav">在线申请</nav>
+            <nav class="nav"><span>在线申请</span></nav>
             <div id="table">
                 <div class="name">
                     <span>申请类别</span>
@@ -121,6 +121,7 @@
     import  city from '../../assets/js/demo'
     export default {
         name: "table",
+        props:["datas"],
         data(){
             return {
                 citys:city.city(),
@@ -128,7 +129,7 @@
             }
         },
         mounted(){
-
+            console.log(this)
         }
     }
 </script>

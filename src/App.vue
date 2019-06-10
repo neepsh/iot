@@ -111,7 +111,7 @@
                 </div>
 
             </div>
-            <router-view/>
+            <router-view v-bind:datas="data"/>
         </div>
 
       <!--  <div id="ie">
@@ -131,6 +131,9 @@
             <div class="sidebar">
                 <router-link to="/web/table">立刻申请</router-link>
             </div>
+            <div class="sidebar">
+                <router-link to="/web/condition">申请条件</router-link>
+            </div>
             <div class="sidebar" @click="side">
                 <i class="icon-0482"></i>
                 <p> 回到顶部</p>
@@ -147,26 +150,25 @@
                     <div>加入我们</div>
                 </div>
                 <div>
-                    <p>联系电话：025-56566</p>
-                    <p>商务合作：025-56566</p>
+                    <p>联系电话：025-8652-8059</p>
+                    <p>公司邮箱：zhangyueqing@njxbz.online</p>
                 </div>
             </div>
         </footer>
         <footer v-if="data.web_type=='web'" id="footer">
             <div class="footer">
                 <div class="footer_top">
-                    <div>网站首页</div>
-                    <div>产品介绍</div>
-                    <div>服务支持</div>
-                    <div>商务合作</div>
-                    <div>在线商城</div>
-                    <div>品牌故事</div>
-                    <div>加入我们</div>
-                    <div>联系我们</div>
+                    <div><router-link to="index">网站首页</router-link></div>
+                    <div> <router-link to="product">产品</router-link></div>
+                    <div><router-link to="server">服务支持</router-link> </div>
+                    <div><router-link to="cooperation">商务合作</router-link> </div>
+                    <div><router-link to="mall">在线商城</router-link> </div>
+                    <div><router-link to="about">关于我们</router-link> </div>
+                    <div><router-link to="contact">联系我们</router-link> </div>
                 </div>
                 <div class="footers">
                     <div class="footer_item">
-                        <nav>关于我们</nav>
+                        <nav><router-link to="about">关于我们</router-link></nav>
                         <div>公司介绍</div>
                         <div>企业文化</div>
                         <div>我们的团队</div>
@@ -186,13 +188,13 @@
                     <div class="footer_item">
                         <nav>联系我们</nav>
                         <div>地址：南京市江宁区麒麟街道华清园5栋308室</div>
-                        <div>电话：88888888</div>
-                        <div>网址：www.njxbz.com</div>
+                        <div>电话：025-8652-8059</div>
+
                     </div>
                 </div>
             </div>
             <div class="footer_wz">
-                © Copyright © 2018 - 2020 luidea.com All rights reserved. 备案编号：苏ICP备18032956号
+                © Copyright © 2018 - 2020 www.njxbz.com All rights reserved. 备案编号：苏ICP备18032956号
             </div>
 
         </footer>
@@ -209,7 +211,8 @@
                     logo: require('./assets/img/logo.jpg'),
                     web_type: "h5",
                     table_h5: false
-                }
+                },
+                name:"miss"
             }
         },
         methods: {
@@ -498,7 +501,7 @@
         #sidebar {
             position: fixed;
             bottom: 300px;
-            height: 200px;
+            height: 300px;
             width: 80px;
             background: #ff7500;
             color: #fff;
@@ -524,8 +527,8 @@
             font-size: 30px;
             line-height: 40px;
         }
-        .sidebar:nth-of-type(1) {
-            border-bottom: 1px solid #fff;
+        .sidebar:nth-last-of-type(1){
+            border: none;
         }
         .sidebar {
             display: inline-block;
@@ -533,6 +536,7 @@
             cursor: pointer;
             text-align: center;
             height: 100px;
+            border-bottom: 1px solid #fff;
         }
 
         .nav_item:hover .menu6 li:first-of-type {
@@ -705,6 +709,12 @@
             background: #1f2022;
             font-size: 18px;
             color: #fff;
+        }
+        .footer_item a{
+            color: #fff;
+        }
+        .menu6 li{
+            box-shadow: 3px 5px 5px #b5a9a9;
         }
 
     }
