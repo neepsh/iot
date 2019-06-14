@@ -31,24 +31,24 @@
                     </div>
                 </div>
                 <div class="item active">
-                    <nav class="name"><span>核心优势</span> <p></p></nav>
+                    <nav class="name"><span>先进科学的榨汁方式</span> <p></p></nav>
                     <div class="info_content">
                         <p>机械手压力感应技术，果皮果肉分离，杜绝农药残留</p>
                         <p>钝刀柔性萃取方式，保留果粒果肉果纤维，锁住VC</p>
                         <p>臭氧+紫外线24h消毒，保证无菌</p>
                         <p> 自动清洗系统，2分钟清洗一次，确保卫生</p>
-                        <p>占地仅1.2m²，应用场景丰富</p>
+                        <p>优质的榨取方式，高于市场的果汁榨取率</p>
                     </div>
                 </div>
 
                 <div class="item active">
-                    <nav class="name"><span>产品明细</span> <p></p></nav>
+                    <nav class="name"><span>合理的软硬件搭配</span> <p></p></nav>
                     <div class="info_content">
-                        <p>机械手压力感应技术，果皮果肉分离，杜绝农药残留</p>
-                        <p>钝刀柔性萃取方式，保留果粒果肉果纤维，锁住VC</p>
-                        <p>臭氧+紫外线24h消毒，保证无菌</p>
-                        <p> 自动清洗系统，2分钟清洗一次，确保卫生</p>
-                        <p>占地仅1.2m²，应用场景丰富</p>
+                        <p>大数据分析助你优化市场</p>
+                        <p>远程控制，方便机器日常运维</p>
+                        <p>微信商城，带来丰富的销售渠道和优质的用户</p>
+                        <p> 机器所有历史操作发回服务器存档，确保运行正常稳定</p>
+                        <p>搭配24h*365监控，确保机器安全性、</p>
                     </div>
                 </div>
 
@@ -57,6 +57,57 @@
         </div>
         <div class="banner"><img :src="msg.img" alt=""></div>
 
+        <nav class="nav">
+            <p>先进的榨取榨取方式</p>
+            <span>Our juice method</span>
+        </nav>
+
+        <div class="juice">
+
+
+        </div>
+
+
+
+        <nav class="nav">
+            <p>阿橙果啦 果汁机器人</p>
+            <span>Our products</span>
+        </nav>
+        <div class="promotion">
+
+            <p>以机器投放位置为核心，开展多频次、多形式的线下营销活动，直接触达目标用户 多渠道投放线下广告，扩大品牌影响力</p>
+            <div class="promotion_content">
+                <div>
+                    <img src="" alt="">
+                    <span></span>
+                    <p>线下活动</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <span></span>
+                    <p>网络推广</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <span></span>
+                    <p>线下活动</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <span></span>
+                    <p>线下活动</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <span></span>
+                    <p>线下活动</p>
+                </div>
+            </div>
+        </div>
+        <nav class="nav">
+            <p>丰富的服务支持</p>
+            <span>Server plan</span>
+        </nav>
     </div>
 </template>
 
@@ -89,6 +140,9 @@
 </script>
 
 <style scoped>
+    .product_info{
+        margin-top: 30px;
+    }
     .info_content{
         line-height: 36px;
         padding: 12px 0;

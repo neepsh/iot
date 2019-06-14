@@ -63,39 +63,37 @@
                             <router-link to="index">首页</router-link>
                         </li>
                         <li @click="show_li(1)" >
-                            <router-link to="product">产品</router-link>
+                            <router-link to="product">产品一览</router-link>
                         </li>
                         <li @click="show_li(2)" >
                             <router-link to="server">服务支持</router-link>
                         </li>
+
                         <li @click="show_li(3)" >
-                            <router-link to="cooperation">商务合作</router-link>
-                        </li>
-                        <li @click="show_li(4)" >
                             <router-link to="mall">在线商城</router-link>
                         </li>
 
-                        <li class="nav_item" @click="show_li(5)">
+                        <li class="nav_item" @click="show_li(4)">
                             <nav>
                                 <router-link to="about"><span>关于我们</span> <i></i></router-link>
                             </nav>
                             <ul class="menu6">
                                 <li>
-                                    <router-link to="info">产品介绍</router-link>
+                                    <router-link to="odds">我们的优势</router-link>
                                 </li>
                                 <li>
-                                    <router-link to="odds">公司优势</router-link>
+                                    <router-link to="join">我们的目标</router-link>
                                 </li>
                                 <li>
-                                    <router-link to="join">会员加盟</router-link>
-                                </li>
-                                <li>
-                                    <router-link to="join">发展规划</router-link>
+                                    <router-link to="join">案例·活动</router-link>
                                 </li>
                             </ul>
                         </li>
-                        <li @click="show_li(6)">
+                        <li @click="show_li(5)">
                             <router-link to="contact">联系我们</router-link>
+                        </li>
+                        <li @click="show_li(6)" >
+                            <router-link to="cooperation">商务合作</router-link>
                         </li>
                     </ul>
                 </div>
@@ -116,11 +114,9 @@
 
       <!--  <div id="ie">
             <h1>您当前的浏览器为ie或者为ie模式</h1>
-            <p>为了更好的体验请您按如下操作</p>
             <div class="ie">
                 <div>
                     <div>1、更换如下浏览器后重新进行访问</div>
-
                 </div>
                 <div></div>
             </div>
@@ -159,42 +155,33 @@
             <div class="footer">
                 <div class="footer_top">
                     <div><router-link to="index">网站首页</router-link></div>
-                    <div> <router-link to="product">产品</router-link></div>
+                    <div> <router-link to="product">优质产品</router-link></div>
+                    <div><router-link to="odds">我们的优势</router-link> </div>
+                    <div><router-link to="about">关于我们</router-link> </div>
                     <div><router-link to="server">服务支持</router-link> </div>
                     <div><router-link to="cooperation">商务合作</router-link> </div>
-                    <div><router-link to="mall">在线商城</router-link> </div>
-                    <div><router-link to="about">关于我们</router-link> </div>
-                    <div><router-link to="contact">联系我们</router-link> </div>
+
                 </div>
                 <div class="footers">
-                    <div class="footer_item">
-                        <nav><router-link to="about">关于我们</router-link></nav>
-                        <div>公司介绍</div>
-                        <div>企业文化</div>
-                        <div>我们的团队</div>
-                        <div>公司地址</div>
+                    <div>
+                        <i class="icon-0255"></i>
+                        <p>联系方式</p>
+                        <div>400-8288-251</div>
                     </div>
-                    <div class="footer_item">
-                        <nav>在线商城</nav>
-                        <div>免零钱交易</div>
-                        <div>快速注册</div>
-                        <div>消费查询</div>
-                        <div>不定期优惠</div>
+                    <div>
+                        <i class="icon-0956"></i>
+                        <p>服务邮箱</p>
+                        <div>zhangyueqing @njxz.online</div>
                     </div>
-                    <div class="footer_item">
-                        <nav>品牌故事</nav>
-                        <div>公司新闻</div>
-                    </div>
-                    <div class="footer_item">
-                        <nav>联系我们</nav>
-                        <div>地址：南京市江宁区麒麟街道华清园5栋308室</div>
-                        <div>电话：025-8652-8059</div>
-
+                    <div>
+                        <i class="icon-0504"></i>
+                        <p>公司地址</p>
+                        <div>南京麒麟科技创新园华清园5栋308</div>
                     </div>
                 </div>
             </div>
             <div class="footer_wz">
-                © Copyright © 2018 - 2020 www.njxbz.com All rights reserved. 备案编号：苏ICP备18032956号
+                © Copyright © 2018 - 2020 阿橙果啦 版权所有. 备案编号：苏ICP备18032956号
             </div>
 
         </footer>
@@ -217,7 +204,7 @@
         },
         methods: {
             show_li(num){
-                var aLi=document.querySelectorAll('.web_list li');
+                var aLi=document.querySelectorAll('.web_list>li');
 
                 for(var i=0;i<aLi.length;i++){
                     aLi[i].classList.remove('nav_active');
@@ -485,10 +472,7 @@
     }
 
     @media screen  and ( min-width: 1170px) {
-        #ie{
-            text-align: center;
-            display: none;
-        }
+
         #ie h1{
             font-size: 26px;
             color: #ff7500;
@@ -554,10 +538,10 @@
             animation-delay: 0.6s;
         }
 
-        .nav_item:hover .menu6 li:last-of-type {
+       /* .nav_item:hover .menu6 li:last-of-type {
             animation: menu6 0.3s ease-in-out forwards;
             animation-delay: 0.8s;
-        }
+        }*/
 
         .nav_item:hover i{
             transform: rotate(135deg);
@@ -635,6 +619,9 @@
             display: flex;
             justify-content: space-between;
         }
+        #header{
+            border-bottom: 1px solid #e6e3e3;
+        }
 
         .nav_list {
             height: 82px;
@@ -650,7 +637,6 @@
         .logo img {
             height: 82px;
         }
-
         .nav_list > li {
             line-height: normal;
             padding: 0 14px;
@@ -658,49 +644,39 @@
         }
 
 
+
         .footer {
             background: #2f2727;
             color: #fff;
         }
-
-        .footer_top > div {
-            float: left;
-            font-size: 24px;
-            padding: 0 15px;
-            border-right: 2px solid #fff;
-        }
-
-        .footer_top > div:nth-last-of-type(1) {
-            border: none;
-        }
-
-        .footer_top:after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-
         .footer_top {
+            font-size: 24px;
             width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
             padding-top: 100px;
         }
-
-        .footers {
+        .footers{
+            width: 1100px;
+            margin: 50px auto 0;
             display: flex;
-            width: 1200px;
-            margin: 60px auto 0;
-            justify-content: space-around;
-        }
-
-        .footer_item {
-            font-size: 14px;
-            color: #fff;
-            line-height: 36px;
-        }
-
-        .footer_item > nav {
+            text-align: center;
+            color: #ff7500;
             font-size: 18px;
+            justify-content: space-between;
+            padding-bottom: 30px;
+        }
+        .footers i{
+            font-size: 64px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+           /* background: #fff;*/
+        }
+
+        .footers p{
+            padding: 20px 0;
         }
 
         .footer_wz {
@@ -708,9 +684,6 @@
             line-height: 72px;
             background: #1f2022;
             font-size: 18px;
-            color: #fff;
-        }
-        .footer_item a{
             color: #fff;
         }
         .menu6 li{

@@ -85,11 +85,12 @@
 
                 <!--      公司地址  -->
                 <div class="address">
+
                     <div class="address_name">
                         <p>Company address</p>
                         <span>公司地址</span>
                     </div>
-                    <div class="address_content">
+                  <!--  <div class="address_content">
                         <div class="address_map"><img :src="msg.map" alt="map"></div>
                         <div class="address_info">
                             <div class="address_item">
@@ -108,8 +109,55 @@
                                 <div>南京麒麟科技创新园华清园5栋308</div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
+
+                <!--我们的优势-->
+              <!--  <div class="odds">
+
+                    <div class="address_name">
+                        <p>Company address</p>
+                        <span>我们的优势</span>
+                    </div>
+                    <div class="odds_content">
+                        <div class="odds_list">
+
+                            <div class="img">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="odds_list">
+
+                            <div class="img">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="odds_list">
+
+                            <div class="img">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="odds_list">
+
+                            <div class="img">
+                                <img src="" alt="">
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
 
             </section>
         </div>
