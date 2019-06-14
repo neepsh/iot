@@ -84,13 +84,13 @@
                 </div>
 
                 <!--      公司地址  -->
-                <div class="address">
+             <!--   <div class="address">
 
                     <div class="address_name">
                         <p>Company address</p>
                         <span>公司地址</span>
                     </div>
-                  <!--  <div class="address_content">
+                  &lt;!&ndash;  <div class="address_content">
                         <div class="address_map"><img :src="msg.map" alt="map"></div>
                         <div class="address_info">
                             <div class="address_item">
@@ -109,55 +109,54 @@
                                 <div>南京麒麟科技创新园华清园5栋308</div>
                             </div>
                         </div>
-                    </div>-->
-                </div>
+                    </div>&ndash;&gt;
+                </div>-->
 
                 <!--我们的优势-->
-              <!--  <div class="odds">
+                <div class="odds">
 
-                    <div class="address_name">
-                        <p>Company address</p>
+                    <div class="culture_name">
+                        <p>Our advantage</p>
                         <span>我们的优势</span>
                     </div>
                     <div class="odds_content">
                         <div class="odds_list">
 
                             <div class="img">
-                                <img src="" alt="">
+                                <i class="icon-0524"></i>
                             </div>
-                            <div>
-
-                            </div>
+                            <div>在线商城</div>
                         </div>
                         <div class="odds_list">
 
                             <div class="img">
-                                <img src="" alt="">
+                                <i class="icon-0545"></i>
                             </div>
-                            <div>
-
-                            </div>
+                            <div>后台管理系统</div>
                         </div>
                         <div class="odds_list">
 
                             <div class="img">
-                                <img src="" alt="">
+                                <i class="icon-0531"></i>
                             </div>
-                            <div>
-
-                            </div>
+                            <div>手操系统</div>
                         </div>
                         <div class="odds_list">
 
                             <div class="img">
-                                <img src="" alt="">
+                                <i class="icon-0823"></i>
                             </div>
-                            <div>
+                            <div>先进榨汁技术</div>
+                        </div>
+                        <div class="odds_list">
 
+                            <div class="img">
+                                <i class="icon-0949"></i>
                             </div>
+                            <div>运维团队</div>
                         </div>
                     </div>
-                </div>-->
+                </div>
 
             </section>
         </div>
@@ -275,9 +274,8 @@
     }
 
     .culture_list {
-        color: #fff;
         margin-top: 100px;
-        background: #68573c;
+        background: #fff0d7;
         margin-bottom: 25px;
         padding: 35px 200px 60px 200px;
     }
@@ -389,7 +387,7 @@
     .address_name p {
         font-size: 19px;
         color: #656565;
-    }
+    }/*
 
     .address_name span {
         font-size: 28px;
@@ -438,5 +436,31 @@
     }
     .address {
         margin-bottom: 30px;
+    }*/
+
+    /*公司优势*/
+
+    .odds{
+        padding-top: 30px;
     }
+    .odds_content{
+        margin: 30px 0 50px;
+        display: flex;
+        height: 351px;
+        background: #fff0d7;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+    .odds_list{
+        font-size: 24px;
+        color: #000;
+    }
+    .odds_list i{
+        color: #ff7500;
+        display: inline-block;
+        padding-bottom: 30px;
+        font-size:60px ;
+    }
+
 </style>

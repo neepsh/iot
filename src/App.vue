@@ -85,7 +85,7 @@
                                     <router-link to="join">我们的目标</router-link>
                                 </li>
                                 <li>
-                                    <router-link to="join">案例·活动</router-link>
+                                    <router-link to="active">案例·活动</router-link>
                                 </li>
                             </ul>
                         </li>

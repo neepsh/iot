@@ -66,6 +66,11 @@ var router=new Router({
             component: resolve => require(['../components/web/condition'], resolve),
             meta: {title: '申请流程'}
         },
+        {
+            path: '/web/active',
+            component: resolve => require(['../components/web/active'], resolve),
+            meta: {title: '申请流程'}
+        },
 
         /*h5*/
         {

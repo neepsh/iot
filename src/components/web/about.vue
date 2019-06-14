@@ -24,13 +24,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <div class="item">
-                        <router-link to="info">
-                            <img :src="img.img1" alt="">
-                            <p>品类介绍</p>
-                        </router-link>
 
-                    </div>
                     <div class="item">
                         <router-link to="odds">
                             <img :src="img.img2" alt="">
@@ -41,14 +35,14 @@
                     <div class="item">
                         <router-link to="join">
                             <img :src="img.img3" alt="">
-                            <p>会员加盟</p>
+                            <p>我们的目标</p>
                         </router-link>
 
                     </div>
                     <div class="item" >
                         <router-link to="join">
                             <img :src="img.img4" alt="">
-                            <p>发展规划</p>
+                            <p>活动 · 案例</p>
                         </router-link>
 
                     </div>

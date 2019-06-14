@@ -14,12 +14,30 @@
                 </nav>
                 <div class="item_img content">
                     <img :src="item_img.img1" alt="#">
+                    <div class="supply">
+                        <div class="supply_list">
+                            <nav>加盟商</nav>
+                            <p>每台押金5万（五台以上）</p>
+                            <p>加盟三年以上</p>
+                            <p>押金逐年返还</p>
+                            <p>合同到期后返还所有押金</p>
+                            <p>返还每台机器利润的15%-20%（月结）</p>
+                            <p>提供所有服务</p>
+                        </div>
+                        <div class="supply_list">
+                            <nav>代理商</nav>
+                            <p>每台榨汁机售价5万</p>
+                            <p>选择代理区域</p>
+                            <p>收缴每台机器利润的15%-20%</p>
+                            <p>提供所有服务</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
             <div class="item">
                 <nav class="nav">
-                    <p>业务流程及服务</p>
+                    <p>先进的榨汁技术</p>
                     <span>Business processes and services</span>
                 </nav>
                 <div class="item_flex content">
@@ -27,17 +45,24 @@
                         <img :src="item_img.img2" alt="#">
                     </div>
                     <div class="info">
-                        <p>我们业务流程细化分工</p>
-                        <p>最专业，最有效，最优质的各个环节</p>
-                        <p>降低各环节成本</p>
-                        <p>从而提高整个行业模式和效率...</p>
+                        <div class="infos">整机自主研发，创新性采用 机械手压力感应系统，产品技术行业领先。 先进的榨取方式，杜绝农药残留等安全隐患，最大程度的保存的橙子的果肉，以及高的出汁率。让果汁拥有无与伦比的口感</div>
                     </div>
                 </div>
+            </div>
+            <div class="item">
+                <nav class="nav">
+                    <p>免费服务</p>
+                    <span>Business processes and services</span>
+                </nav>
+
                 <div class="item_flex content">
                     <div class="info">
-                        <p> <i class="icon-0334"></i>提供物料到仓以及物料到点 ，两种第三方物流方案提供加盟商选择</p>
-                        <p> <i class="icon-0334"></i>提供物料到仓以及物料到点 ，两种第三方物流方案提供加盟商选择</p>
-                        <p> <i class="icon-0334"></i>提供物料到仓以及物料到点 ，两种第三方物流方案提供加盟商选择</p>
+                        <p> <i class="icon-0334"></i>商城平台：扩大销售渠道，提供更多的用户流量</p>
+                        <p> <i class="icon-0334"></i>后台系统：实时统计分析销售数据，提供第一手市场情报反馈</p>
+                        <p> <i class="icon-0334"></i>手操系统：远程调控机器，让您在家完成机器操作</p>
+                        <p> <i class="icon-0334"></i>免费培训：针对渠道、代理商、集成商的产品、开发、使用培训</p>
+                        <p> <i class="icon-0334"></i>供应链支持：精选来自各地橙子原产地直供。365天为您保障新鲜稳定货源供应，让您更加便捷。</p>
+                        <p> <i class="icon-0334"></i>统一运营：对所有加盟商进行免费拿线上线下运行，提高用户数量。</p>
                     </div>
                     <div class="img">
                         <img :src="item_img.img3" alt="#">
@@ -66,7 +91,7 @@
             return {
                 banner: require('../../assets/img/hezuo_banner_02.jpg'),
                 item_img: {
-                    img1: require('../../assets/img/web_item_03.jpg'),
+                    img1: require('../../assets/img/hezuo.png'),
                     img2: require('../../assets/img/web_11.jpg'),
                     img3: require('../../assets/img/web_15.jpg'),
                     img4: require('../../assets/img/web_item_07.jpg'),
@@ -77,10 +102,33 @@
 </script>
 
 <style scoped>
+    .supple_list >p:nth-of-type(2n){
+        color: #ff7500;
+    }
+    .supply{
+        display: flex;
+        color: #333333;
+        justify-content: space-around;
+    }
+    .supply_list:nth-of-type(1){
+        background: #ffe5df;
+    }
+    .supple_list:nth-of-type(1) nav{
+        background: #ffc391;
+    }
+    .supply_list{
+        font-size: 24px;
+        height: 487px;
+        width: 592px;
+    }
+    .supply_list nav{
+       height: 80px;
+        font-size: 28px;
+        line-height: 80px;
+    }
     #banner img {
         width: 100%;
     }
-
     #content {
         width: 1200px;
         padding-top: 55px;
@@ -136,7 +184,6 @@
         width: 600px;
     }
     .img{
-
         text-align: center;
     }
     .info{
@@ -145,14 +192,20 @@
     }
     .info p{
         padding:  15px 0;
-    }
-    .info{
-        margin-top: 30px;
+        line-height: 36px;
     }
     .info i{
         display: inline-block;
         padding-right: 15px;
         color: #ff7500;
     }
+    .infos{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-indent: 2em;
+        line-height: 40px;
+    }
+
 
 </style>

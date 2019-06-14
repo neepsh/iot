@@ -9,8 +9,16 @@
              <div class="img"><img :src="msg.product" alt=""></div>
 
             <div class="info">
+
+                <div class="item active">
+                    <nav class="name"><span>产品概述 </span> <p></p></nav>
+                    <div class="info_content">
+                        <div class="Introduction">国内首创实现全自动萃取果粒橙的自助销售终端，配备智能保鲜系统、语音播报 系统、数据联网系统、臭氧紫外线杀毒系统，可在舱内自动完成橙子切半、萃取、 装杯、封盖一体化生产流程，无缝对接微信、支付宝等主流支付平台。</div>
+                    </div>
+                </div>
                 <div class="item">
                     <nav class="name"><span>产品参数</span> <p></p></nav>
+
                     <div class="info_ul">
                         <ul>
                             <li><span>型号</span>  <b>XBZ-JU-OA</b></li>
@@ -30,6 +38,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="item active">
                     <nav class="name"><span>先进科学的榨汁方式</span> <p></p></nav>
                     <div class="info_content">
@@ -140,6 +149,11 @@
 </script>
 
 <style scoped>
+    .Introduction{
+        padding: 30px;
+        width: 70%;
+        text-indent: 2em;
+    }
     .product_info{
         margin-top: 30px;
     }
@@ -155,7 +169,6 @@
     .active{
         height: 41px;
         overflow: hidden;
-
     }
     .info_ul{
         display: flex;
