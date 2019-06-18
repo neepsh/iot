@@ -3,7 +3,7 @@
         <div id="banner">
             <img :src="banner" alt="">
         </div>
-        <div id="content">
+        <div id="contents">
 
                 <nav class="nav">
                     <p>公司简介</p>
@@ -71,10 +71,21 @@
 </script>
 
 <style scoped>
+    .img,.item{
+        overflow: hidden;
+    }
+    #contents img:hover{
+        transform: scale(1.2);
+    }
+    #contents img{
+        transition: 0.6s;
+        transform: scale(1);
+    }
     #banner img{
         width: 100%;
+        margin-top: -25px;
     }
-    #content{
+    #contents{
         width: 1200px;
         margin: 0 auto;
     }

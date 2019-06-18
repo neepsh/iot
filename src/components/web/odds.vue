@@ -3,7 +3,7 @@
         <div id="banner">
             <img :src="msg.banner" alt="banner">
         </div>
-        <div id="content">
+        <div id="contents">
             <div class="item">
                 <nav class="nav">
                     <p>公司简介</p>
@@ -35,7 +35,6 @@
                 <nav class="nav">
                     <p>消费模式</p>
                     <span>Consumption patterns</span>
-
                 </nav>
                 <div class="content">
                      <div class="item">
@@ -130,15 +129,14 @@
 
 <style scoped>
 
+
     #banner img{
         width: 100%;
+        margin-top: -25px;
     }
-
-    #content{
+    #contents{
         width: 1200px;
-        padding-top: 55px;
         margin: 0 auto;
-        margin-bottom: 60px;
     }
     .nav{
         text-align: center;

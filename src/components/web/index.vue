@@ -206,10 +206,15 @@
     .company_img img {
         width: 430px;
         height: 430px;
+        transform: scale(1);
+        transition: 0.6s;
     }
-
+    .company_img img:hover{
+        transform: scale(1.1);
+    }
     .company_img {
         margin-left: 66px;
+        overflow: hidden;
     }
 
     .company_p {
@@ -311,6 +316,9 @@
         border-right: 3px solid #b5b5b5;
         padding: 25px;
     }
+    .product_list>div{
+        overflow: hidden;
+    }
 
     .product_list:nth-of-type(2n+1) .product_name:after {
         content: '';
@@ -348,7 +356,6 @@
         justify-content: space-around;
         align-items: center;
         margin-top: 30px;
-
     }
 
     .product {
@@ -358,6 +365,11 @@
 
     .product_list img {
         width: 429px;
+        transition: 0.6s;
+        transform: scale(1);
+    }
+    .product_list img:hover{
+        transform: scale(1.4);
     }
 
     .product_list:nth-of-type(2n) {

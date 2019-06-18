@@ -21,7 +21,7 @@
                             <p>加盟三年以上</p>
                             <p>押金逐年返还</p>
                             <p>合同到期后返还所有押金</p>
-                            <p>返还每台机器利润的15%-20%（月结）</p>
+                            <p>每月返还每台机器利润的15%-20%</p>
                             <p>提供所有服务</p>
                         </div>
                         <div class="supply_list">
@@ -102,19 +102,31 @@
 </script>
 
 <style scoped>
-    .supple_list >p:nth-of-type(2n){
+    .supply_list >p:nth-of-type(2n){
         color: #ff7500;
     }
     .supply{
         display: flex;
         color: #333333;
         justify-content: space-around;
+        margin-top: 50px;
     }
     .supply_list:nth-of-type(1){
         background: #ffe5df;
     }
-    .supple_list:nth-of-type(1) nav{
+    .supply_list:nth-of-type(1) nav{
         background: #ffc391;
+    }
+
+    .supply_list:nth-of-type(2) nav{
+        background: #ff7500;
+        color: #fff
+    }
+    .supply_list:nth-of-type(2){
+        background: #ffc391;
+    }
+    .supply_list p{
+        padding-top: 26px;
     }
     .supply_list{
         font-size: 24px;

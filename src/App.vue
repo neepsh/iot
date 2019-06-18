@@ -112,17 +112,6 @@
             <router-view v-bind:datas="data"/>
         </div>
 
-      <!--  <div id="ie">
-            <h1>您当前的浏览器为ie或者为ie模式</h1>
-            <div class="ie">
-                <div>
-                    <div>1、更换如下浏览器后重新进行访问</div>
-                </div>
-                <div></div>
-            </div>
-        </div>
--->
-
         <div id="sidebar">
             <div class="sidebar">
                 <router-link to="/web/table">立刻申请</router-link>
