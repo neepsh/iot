@@ -128,11 +128,12 @@
 
             <div class="footer">
                 <div class="footer_top">
-                    <div>关于我们</div>
-                    <div>产品下载</div>
-                    <div>技术支持</div>
-                    <div>商务合作</div>
-                    <div>加入我们</div>
+                    <div><router-link to="about">关于我们</router-link></div>
+                    <div><router-link to="server">服务支持</router-link></div>
+                    <div><router-link to="cooperation">商务合作</router-link></div>
+                    <div><router-link to="join">加入我们</router-link></div>
+                    <div><router-link to="contact">联系我们</router-link></div>
+
                 </div>
                 <div>
                     <p>联系电话：025-8652-8059</p>
@@ -160,7 +161,7 @@
                     <div>
                         <i class="icon-0956"></i>
                         <p>服务邮箱</p>
-                        <div>zhangyueqing @njxz.online</div>
+                        <div>bd@njxz.online</div>
                     </div>
                     <div>
                         <i class="icon-0504"></i>

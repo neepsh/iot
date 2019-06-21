@@ -96,7 +96,7 @@
         data() {
             return {
                 msg: {
-                    banner: require('../../assets/img/odds_banner.png'),
+                    banner: require('../../assets/img/jion_bg.jpg'),
 
                     item: {
                         img1: require('../../assets/img/join_item_03.jpg'),
@@ -287,7 +287,7 @@
 
     #banner img {
         width: 100%;
-        margin-top: -25px;
+
     }
 
     #contents {

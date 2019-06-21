@@ -9,6 +9,7 @@ var router=new Router({
         },
         {
             path: '/web/index',
+            name:'neep',
             component: resolve => require(['../components/web/index'], resolve),
             meta: {title: '主页'}
         },
@@ -149,6 +150,7 @@ router.beforeEach((to,form,next)=>{
         return ua.indexOf(arr) > 0;
     });
     if( res.length > 0 ){
+        alert("移动端正在开发中，如需完整的体验请使用电脑访问")
         if( to.path.indexOf('web')>0){
             let address=to.path.replace('/web','/h5');
 
@@ -157,7 +159,10 @@ router.beforeEach((to,form,next)=>{
             next();
         }
     }else {
+
         if (to.path.indexOf('h5')>0){
+
+
             let w_address=to.path.replace('/h5','/web')
             if(w_address.indexOf('question')>0){
                 w_address=w_address.replace('question','condition');

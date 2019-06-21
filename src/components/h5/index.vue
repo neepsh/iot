@@ -49,9 +49,12 @@
         <div class="product_nav">阿橙果啦</div>
         <div class="product">
           <div>
-            <div class="product_name">阿橙果啦 &nbsp 果汁机器人</div>
-            <div class="product_info"> 果汁机器人·维空间·果汁机器 人占地仅1.2平米......</div>
-            <div class="product_btn">点击详情</div>
+              <router-link to="info">
+                  <div class="product_name">阿橙果啦 &nbsp 果汁机器人</div>
+                  <div class="product_info"> 果汁机器人·维空间·果汁机器 人占地仅1.2平米......</div>
+                  <div class="product_btn">点击详情</div>
+              </router-link>
+
           </div>
           <div class="product_img">
             <img :src="product.product1" alt="xbz">

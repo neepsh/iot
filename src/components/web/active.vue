@@ -10,7 +10,7 @@
                     <span>Case activity</span>
                 </nav>
                 <div class="product">
-                    <div class="item">
+                   <!-- <div class="item">
                         <img :src="msg.bg_product1" alt="">
                         <div class="info">
                             <div class="price">会员价： <span>6.88万</span></div>
@@ -42,7 +42,8 @@
                             <p>加盟模式: 加盟费20万（5台起）每台押金6.88万</p>
                             <p>服务条款：软件后台收据服务支持</p>
                         </div>
-                    </div>
+                    </div>-->
+                    <img :src="msg.bg_product1" alt="">
                 </div>
 
             </div>
@@ -57,16 +58,8 @@
             return {
                 msg: {
                     banner: require('../../assets/img/odds_banner.png'),
-                    bg_product1: require('../../assets/img/bg_product3.png'),
-                    bg_product2: require('../../assets/img/bg_product4.png'),
-                    bg_product3: require('../../assets/img/bg_product1.png'),
-                    bg_product4: require('../../assets/img/bg_product2.png'),
-                    icon: {
-                        img1: require('../../assets/img/c_icon_03.png'),
-                        img2: require('../../assets/img/c_icon_05.png'),
-                        img3: require('../../assets/img/c_icon_07.png'),
-                        img4: require('../../assets/img/coorp_26.jpg'),
-                    }
+                    bg_product1: require('../../assets/img/active_03.jpg'),
+
                 }
             }
         }
@@ -110,8 +103,12 @@
         left: 43%;
         padding: 0 10px;
     }
+    .product img{
+        width: 100%;
+        margin-top: 50px;
+    }
 
-    .product {
+   /* .product {
         margin: 30px 0;
         display: flex;
         justify-content: space-around;
@@ -217,5 +214,5 @@
         text-align: center;
         display: inline-block;
         width: 100%;
-    }
+    }*/
 </style>
