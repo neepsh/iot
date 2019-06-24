@@ -2,8 +2,21 @@
     <div class="index">
         <div id="content">
             <!--    banner -->
-            <section class="banner">
-                <div><img :src="msg.banner" alt="#"></div>
+            <section class="banner" ref="banner_content">
+                <div class="btn_banner btn_left" ><i  ref="btn_left" class="icon-0243"></i></div>
+                <div class="btn_banner btn_right" ><i class="icon-0244" ref="btn_right"></i></div>
+                <div class="banner_ref" ref="banner">
+                    <img :src="msg.banner" alt="#">
+                    <img :src="msg.banner1" alt="#">
+                    <img :src="msg.banner2" alt="#">
+                    <img :src="msg.banner3" alt="#">
+                </div>
+                <div class="banner_line">
+                    <div class="line_active"></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </section>
             <!--    banner 结束-->
 
@@ -165,12 +178,17 @@
 </template>
 
 <script>
+    import { doMove } from "../../assets/js/move";
+
     export default {
         name: "index",
         data() {
             return {
                 msg: {
                     banner: require('../../assets/img/banner.png'),
+                    banner1: require('../../assets/img/index_banner.jpg'),
+                    banner2: require('../../assets/img/index_banner1.jpg'),
+                    banner3: require('../../assets/img/index_banner2.jpg'),
                     product1: require('../../assets/img/index_product_03.jpg'),
                     product2: require('../../assets/img/index_product_07.jpg'),
                     product3: require('../../assets/img/index_product_11.jpg'),
@@ -178,6 +196,87 @@
                     map: require('../../assets/img/adress.png')
                 }
             }
+        },
+        methods:{
+            banner(){
+                let oBox=this.$refs['banner'];
+                oBox.innerHTML+=oBox.innerHTML;
+                var aLine=document.querySelectorAll('.banner_line div');
+
+                let aImg=oBox.querySelectorAll('img');
+
+                var oW=this.$refs['banner_content'].clientWidth,oH=oW*647/1920;
+
+                var timer=null,num=0,oLast=aLine[0];
+
+                for(var i=0;i<aImg.length;i++){
+
+                    aImg[i].style.width=this.$refs['banner_content'].clientWidth+'px';
+
+                }
+                this.$refs['banner_content'].style.height=oH+'px';
+
+                this.$refs['btn_left'].onclick=function(){
+
+                    if(num<=0){
+                        console.log(num);
+                        num=aImg.length/2;
+                        oBox.style.left= -num*oW + 'px';
+                    }
+                    num--;
+                    doMove(oBox,{left:-num*oW});
+                    show_line(num)
+                };
+                this.$refs['btn_right'].onclick=function(){
+                    num++;
+                    doMove(oBox,{left:-num*oW},function () {
+                        if(num>=aImg.length/2){
+                            oBox.style.left=0;
+                            num=0;
+                        }
+                    });
+                    show_line(num)
+                };
+                oBox.onmouseover=function(){
+                    clearInterval(timer);
+                };
+                oBox.onmouseout=function(){
+                    timer=setInterval(show_banner,4000)
+                };
+                timer=setInterval(show_banner,4000);
+
+                function show_banner() {
+                    num++;
+                    doMove(oBox,{left:-num*oW},function () {
+                        if(num>=aImg.length/2){
+                            oBox.style.left=0;
+                            num=0;
+                        }
+                    });
+                    show_line(num)
+
+                }
+
+                function show_line(num) {
+                    oLast.classList.remove('line_active');
+                    aLine[num%4].classList.add('line_active');
+                    oLast=aLine[num%4];
+                }
+
+                for(var i=0;i<aLine.length;i++){
+                    aLine[i].index=i;
+                    aLine[i].onclick=function () {
+                        num=this.index;
+                        doMove(oBox,{left:-num*oW});
+                        show_line(num)
+                    }
+                }
+
+            }
+
+        },
+        mounted() {
+            this.banner();
         }
     }
 </script>
@@ -186,8 +285,64 @@
 
     /* banner */
 
-    .banner img {
+    .banner_line{
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+        position: absolute;
+        bottom: 10px;
         width: 100%;
+    }
+    .banner_line div{
+        height: 10px;
+        width: 20px;
+        border-radius: 5px;
+        background: #fff;
+        margin-left: 12px;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+    .banner .line_active{
+        width: 40px;
+        background: #ff7500;
+    }
+    .btn_banner{
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+    .btn_banner:hover i{
+        opacity: 1;
+    }
+    .btn_banner i:hover{
+        transform: scale(1.4);
+    }
+
+    .btn_banner i{
+        transition: 0.6s;
+        font-size: 50px;
+        color: #fff;
+        opacity: 0.4;
+        cursor: pointer;
+    }
+    .btn_right{
+        left: 70%;
+    }
+    .banner_ref{
+        width: 20000px;
+        display: flex;
+        position: absolute;
+    }
+    .banner{
+        position: relative;
+        overflow: hidden;
+        height: 500px;
     }
 
     .content {
@@ -399,7 +554,8 @@
     .address_name p {
         font-size: 19px;
         color: #656565;
-    }/*
+    }
+    /*
 
     .address_name span {
         font-size: 28px;

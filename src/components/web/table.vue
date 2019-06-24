@@ -120,7 +120,7 @@
 <script>
     import  city from '../../assets/js/demo'
     export default {
-        name: "table",
+        name: "tables",
         props:["datas"],
         data(){
             return {
@@ -129,7 +129,7 @@
             }
         },
         mounted(){
-            console.log(this)
+            //console.log(this)
         }
     }
 </script>

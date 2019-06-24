@@ -10,19 +10,19 @@
                 <div>
                     <div class="name">良好的商业意识和经验</div>
                     <div class="list">
-                        <p>★ 有成功的经商经历</p>
-                        <p>★ 具有创业精神</p>
-                        <p>★ 充分理解维果部落商业模式</p>
-                        <p>★ 具备餐饮/饮料/零售行业经验为佳</p>
+                        <p><i class="icon-0345"></i> 有成功的经商经历</p>
+                        <p><i class="icon-0345"></i> 具有创业精神</p>
+                        <p><i class="icon-0345"></i> 充分理解阿橙果啦商业模式</p>
+                        <p><i class="icon-0345"></i> 具备餐饮/饮料/零售行业经验为佳</p>
                     </div>
                 </div>
                 <div>
                     <div class="name">卓越的运营管理能力</div>
                     <div class="list">
-                        <p> ★ 有招募及管理团队的经验</p>
-                        <p>★ 重视员工的培养与团队建设</p>
-                        <p>★ 可胜任繁杂的的日常运营工作</p>
-                        <p>★ 善于处理政府及消费者关系</p>
+                        <p> <i class="icon-0345"></i> 有招募及管理团队的经验</p>
+                        <p><i class="icon-0345"></i> 重视员工的培养与团队建设</p>
+                        <p><i class="icon-0345"></i> 可胜任繁杂的的日常运营工作</p>
+                        <p><i class="icon-0345"></i> 善于处理政府及消费者关系</p>
                     </div>
                 </div>
             </div>
@@ -31,17 +31,17 @@
                 <div>
                     <div class="name">优秀的渠道拓展能力</div>
                     <div class="list">
-                        <p>★ 有招募及管理团队的经验</p>
-                        <p>★ 重视员工的培养与团队建设</p>
-                        <p>★ 可胜任繁杂的的日常运营工作</p>
-                        <p>★ 善于处理政府及消费者关系</p>
+                        <p><i class="icon-0345"></i> 有招募及管理团队的经验</p>
+                        <p><i class="icon-0345"></i> 重视员工的培养与团队建设</p>
+                        <p><i class="icon-0345"></i> 可胜任繁杂的的日常运营工作</p>
+                        <p><i class="icon-0345"></i> 善于处理政府及消费者关系</p>
                     </div>
                 </div>
                 <div>
                     <div class="name">具备长远发展潜力</div>
                     <div class="list">
-                        <p>★ 对特许经营事业有长远规划</p>
-                        <p>★ 具备管理更大规模市场的潜质</p>
+                        <p><i class="icon-0345"></i> 对特许经营事业有长远规划</p>
+                        <p><i class="icon-0345"></i> 具备管理更大规模市场的潜质</p>
                     </div>
                 </div>
 
@@ -108,11 +108,33 @@
     }
     .ctrl b{
         height: 80px;
-        width: 10px;
+        width: 20px;
         position: absolute;
         bottom: 0;
         display: inline-block;
         background: #ff7500;
+    }
+    .ctrl b:before{
+        display: block;
+        content:"";
+        width: 0;
+        height: 0;
+        border: 10px solid;
+        border-color: #fff transparent transparent transparent;
+        position: absolute;
+        top: 0px;
+        z-index: 10;
+    }
+    .ctrl b:after{
+        display: block;
+        content:"";
+        width: 0;
+        height: 0;
+        border: 10px solid;
+        border-color: #ff7500 transparent transparent transparent;
+        position: absolute;
+        bottom: -20px;
+        z-index: 10;
     }
     .ctrl span{
         display: inline-block;
@@ -124,14 +146,22 @@
         font-size: 0;
         position: relative;
         line-height: 80px;
+        margin-top: 10px;
     }
     .ctrl{
         margin: 30px auto;
-        width: 600px
-    ;
+        width: 600px;
     }
     .img{
         margin-top: 30px;
+    }
+    .list{
+        font-size: 16px;
+        margin-left: -50px;
+        width: 260px;
+    }
+    .list i{
+        color: #ff7500;
     }
     .info{
         font-size: 24px;
@@ -142,10 +172,11 @@
     .content{
         display: flex;
         justify-content: space-around;
-        margin-top: 30px;
+        margin: 30px 0;
     }
     .content>div{
-        width: 50%;
+        width: 45%;
+        padding-left: 5%;
         justify-content: space-around;
         display: flex;
         line-height: 36px;
@@ -153,6 +184,7 @@
     .name{
         font-size: 18px ;
         color: #ff7500;
+        flex-grow: 2;
     }
     .item>nav{
         font-size: 24px;
