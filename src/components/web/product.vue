@@ -82,7 +82,7 @@
         data(){
             return {
                 data:{
-                    img1:require('../../assets/img/products1.png'),
+                    img1:require('../../assets/img/procut_info.png'),
                     img2:require('../../assets/img/products2.png'),
                     img3:require('../../assets/img/products3.png'),
                 }

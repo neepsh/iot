@@ -63,8 +63,8 @@
                     </div>
                 </div>
 
-                <!--        产品-->
-                <div class="product">
+                <!--   产品-->
+                <div class="product" v-miss="'missflower'">
                     <div class="culture_name">
                         <p>Brand product</p>
                         <span>优质产品</span>
@@ -182,6 +182,13 @@
 
     export default {
         name: "index",
+        directives:{
+            miss:{
+                bind:function (el,data) {
+                    console.log(data)
+                }
+            }
+        },
         data() {
             return {
                 msg: {
@@ -190,7 +197,7 @@
                     banner2: require('../../assets/img/index_banner1.jpg'),
                     banner3: require('../../assets/img/index_banner2.jpg'),
                     product1: require('../../assets/img/index_product_03.jpg'),
-                    product2: require('../../assets/img/index_product_07.jpg'),
+                    product2: require('../../assets/img/products.png'),
                     product3: require('../../assets/img/index_product_11.jpg'),
                     culture: require('../../assets/img/culture.png'),
                     map: require('../../assets/img/adress.png')

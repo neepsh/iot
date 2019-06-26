@@ -59,17 +59,17 @@
                 </div>
                 <div class="nav">
                     <ul class="nav_list web_list">
-                        <li @click="show_li(0)" >
+                        <li @click="show_li(0)">
                             <router-link to="index">首页</router-link>
                         </li>
-                        <li @click="show_li(1)" >
+                        <li @click="show_li(1)">
                             <router-link to="product">产品一览</router-link>
                         </li>
-                        <li @click="show_li(2)" >
+                        <li @click="show_li(2)">
                             <router-link to="server">服务支持</router-link>
                         </li>
 
-                        <li @click="show_li(3)" >
+                        <li @click="show_li(3)">
                             <router-link to="mall">在线商城</router-link>
                         </li>
 
@@ -92,7 +92,7 @@
                         <li @click="show_li(5)">
                             <router-link to="contact">联系我们</router-link>
                         </li>
-                        <li @click="show_li(6)" >
+                        <li @click="show_li(6)">
                             <router-link to="cooperation">商务合作</router-link>
                         </li>
                     </ul>
@@ -103,9 +103,13 @@
         <div id="content">
             <div class="nav_apply" v-if="data.table_h5">
                 <div class="apply">
-                    <div><router-link to="/h5/condition">如何申请</router-link></div>
+                    <div>
+                        <router-link to="/h5/condition">如何申请</router-link>
+                    </div>
                     <!--<div>常见问题</div>-->
-                    <div><router-link to="/h5/table">在线申请</router-link></div>
+                    <div>
+                        <router-link to="/h5/table">在线申请</router-link>
+                    </div>
                 </div>
 
             </div>
@@ -128,11 +132,21 @@
 
             <div class="footer">
                 <div class="footer_top">
-                    <div><router-link to="about">关于我们</router-link></div>
-                    <div><router-link to="server">服务支持</router-link></div>
-                    <div><router-link to="cooperation">商务合作</router-link></div>
-                    <div><router-link to="join">加入我们</router-link></div>
-                    <div><router-link to="contact">联系我们</router-link></div>
+                    <div>
+                        <router-link to="about">关于我们</router-link>
+                    </div>
+                    <div>
+                        <router-link to="server">服务支持</router-link>
+                    </div>
+                    <div>
+                        <router-link to="cooperation">商务合作</router-link>
+                    </div>
+                    <div>
+                        <router-link to="join">加入我们</router-link>
+                    </div>
+                    <div>
+                        <router-link to="contact">联系我们</router-link>
+                    </div>
 
                 </div>
                 <div>
@@ -144,12 +158,24 @@
         <footer v-if="data.web_type=='web'" id="footer">
             <div class="footer">
                 <div class="footer_top">
-                    <div><router-link to="index">网站首页</router-link></div>
-                    <div> <router-link to="product">优质产品</router-link></div>
-                    <div><router-link to="odds">我们的优势</router-link> </div>
-                    <div><router-link to="about">关于我们</router-link> </div>
-                    <div><router-link to="server">服务支持</router-link> </div>
-                    <div><router-link to="cooperation">商务合作</router-link> </div>
+                    <div>
+                        <router-link to="index">网站首页</router-link>
+                    </div>
+                    <div>
+                        <router-link to="product">优质产品</router-link>
+                    </div>
+                    <div>
+                        <router-link to="odds">我们的优势</router-link>
+                    </div>
+                    <div>
+                        <router-link to="about">关于我们</router-link>
+                    </div>
+                    <div>
+                        <router-link to="server">服务支持</router-link>
+                    </div>
+                    <div>
+                        <router-link to="cooperation">商务合作</router-link>
+                    </div>
 
                 </div>
                 <div class="footers">
@@ -189,14 +215,14 @@
                     web_type: "h5",
                     table_h5: false
                 },
-                name:"miss"
+                name: "miss"
             }
         },
         methods: {
-            show_li(num){
-                var aLi=document.querySelectorAll('.web_list>li');
+            show_li(num) {
+                var aLi = document.querySelectorAll('.web_list>li');
 
-                for(var i=0;i<aLi.length;i++){
+                for (var i = 0; i < aLi.length; i++) {
                     aLi[i].classList.remove('nav_active');
                 }
                 aLi[num].classList.add('nav_active')
@@ -211,6 +237,7 @@
                         window.scrollTo(0, currentScroll - (currentScroll / 5));
                     }
                 }
+                console.log(666677)
                 smoothscroll();
             },
             isphone() {
@@ -228,44 +255,85 @@
                     if (path.indexOf('phone') == -1) {
                         this.data.web_type = "h5"
                     }
-                    oSide.style.display='none';
+                    oSide.style.display = 'none';
 
                 } else {
                     if (this.$router.history.current.path.indexOf('web') == -1) {
                         this.data.web_type = "web"
                     }
-                    oSide.style.display='none';
+                    oSide.style.display = 'none';
 
                     if (oSide) {
-                        console.log(111111)
+
                         oSide.style.left = (document.documentElement.clientWidth - 1200) / 2 + 1200 + "px";
-                        window.onscroll= function () {
-                            var top = document.documentElement.scrollTop;
+
+                        this.mousewheel(window, function () {
+
+                            var top = document.documentElement.scrollTop||document.body.scrollTop;
+                                console.log(top)
                             if (top > 300) {
-                                console.log(22222)
+
                                 oSide.style.display = 'block';
                             } else {
                                 oSide.style.display = 'none';
                             }
-                        };
+                        })
 
                     }
-
                 }
             },
             set_size() {
                 var oW = document.documentElement.clientWidth / 7.5;
 
                 document.querySelector('html').style.fontSize = oW + 'px';
+            },
+            mousewheel(dom, callback, bool) {
+                var type = "mousewheel";
+                if (dom.onmousewheel === undefined) {
+                    // 兼容firefox滚轮事件，事件类型为DOMMouseScroll且只能使用DOM2级事件绑定
+                    type = "DOMMouseScroll";
+                }
+
+                function fn(e) {
+                    /* 滚轮滚动方向
+                     * firefox：e.detail
+                     * IE/Chrome等：e.wheelDelta
+                     */
+                    var e = e || window.event;
+
+                    // firefox滚轮事件滚动方向兼容
+                    if (!e.wheelDelta) {
+                        e.wheelDelta = e.detail / -3 * 120;
+                    }
+
+                    if (!!bool) {
+                        if (e.preventDefault) {
+                            e.preventDefault()
+                        } else {
+                            //IE 阻止默认事件兼容
+                            e.returnValue = false;
+                        }
+                    }
+
+                    callback && callback.call(this, e);
+                }
+
+                if (dom.addEventListener) {
+                    dom.addEventListener(type, fn)
+                } else {
+                    // IEDOM2级事件绑定兼容
+                    dom.attachEvent("on" + type, fn)
+                }
             }
+
         },
         mounted() {
             this.isphone();
             this.set_size();
 
-            if (!!window.ActiveXObject || "ActiveXObject" in window){
+            if (!!window.ActiveXObject || "ActiveXObject" in window) {
 
-                document.querySelector('#ie').style.display='block';
+                document.querySelector('#ie').style.display = 'block';
             }
 
             var nav_status = false, ul_status = false, status = true;
@@ -465,15 +533,17 @@
 
     @media screen  and ( min-width: 1170px) {
 
-        #ie h1{
+        #ie h1 {
             font-size: 26px;
             color: #ff7500;
             margin-top: 150px;
         }
-        #ie p{
+
+        #ie p {
             font-size: 20px;
             margin-top: 60px;
         }
+
         #sidebar {
             position: fixed;
             bottom: 300px;
@@ -485,27 +555,34 @@
             text-align: center;
 
         }
-        .nav_active nav a{
+
+        .nav_active nav a {
             color: #ff7500;
         }
-        .nav_active a{
+
+        .nav_active a {
             color: #ff7500;
         }
-        .web_list a:hover{
+
+        .web_list a:hover {
             color: #ff7500;
         }
+
         .sidebar a {
             color: #fff;
             display: inline-block;
             padding-top: 20px;
         }
+
         .sidebar i {
             font-size: 30px;
             line-height: 40px;
         }
-        .sidebar:nth-last-of-type(1){
+
+        .sidebar:nth-last-of-type(1) {
             border: none;
         }
+
         .sidebar {
             display: inline-block;
             width: 40px;
@@ -530,18 +607,19 @@
             animation-delay: 0.6s;
         }
 
-       /* .nav_item:hover .menu6 li:last-of-type {
-            animation: menu6 0.3s ease-in-out forwards;
-            animation-delay: 0.8s;
-        }*/
-
-        .nav_item:hover i{
+        /* .nav_item:hover .menu6 li:last-of-type {
+             animation: menu6 0.3s ease-in-out forwards;
+             animation-delay: 0.8s;
+         }*/
+        .nav_item:hover i {
             transform: rotate(135deg);
         }
-        .menu6 li{
+
+        .menu6 li {
             border-bottom: 1px solid #d9d9d9;
         }
-        .menu6 li:nth-last-of-type(1){
+
+        .menu6 li:nth-last-of-type(1) {
             border-bottom: none;
         }
 
@@ -559,6 +637,7 @@
             width: 100%;
             height: 100%;
         }
+
         .menu6 {
             padding-top: 28px;
             position: absolute;
@@ -611,7 +690,8 @@
             display: flex;
             justify-content: space-between;
         }
-        #header{
+
+        #header {
             border-bottom: 1px solid #e6e3e3;
         }
 
@@ -632,6 +712,7 @@
         .logo img {
             height: 60px;
         }
+
         .nav_list > li {
             line-height: normal;
             padding: 0 14px;
@@ -639,11 +720,11 @@
         }
 
 
-
         .footer {
             background: #2f2727;
             color: #fff;
         }
+
         .footer_top {
             font-size: 24px;
             width: 1200px;
@@ -652,10 +733,12 @@
             justify-content: space-around;
             padding-top: 100px;
         }
-        .footer_top a{
+
+        .footer_top a {
             color: #fff;
         }
-        .footers{
+
+        .footers {
             width: 1100px;
             margin: 50px auto 0;
             display: flex;
@@ -665,15 +748,16 @@
             justify-content: space-between;
             padding-bottom: 30px;
         }
-        .footers i{
+
+        .footers i {
             font-size: 64px;
             height: 50px;
             width: 50px;
             border-radius: 50%;
-           /* background: #fff;*/
+            /* background: #fff;*/
         }
 
-        .footers p{
+        .footers p {
             padding: 20px 0;
         }
 
@@ -684,7 +768,8 @@
             font-size: 18px;
             color: #fff;
         }
-        .menu6 li{
+
+        .menu6 li {
             box-shadow: 3px 5px 5px #b5a9a9;
         }
 

@@ -61,8 +61,8 @@
                 img:{
                     company:require('../../assets/img/banner_about.png'),
                     img1: require('../../assets/img/company_10.jpg'),
-                    img2: require('../../assets/img/company_07.jpg'),
-                    img3: require('../../assets/img/company_18.jpg'),
+                    img2: require('../../assets/img/company_07.png'),
+                    img3: require('../../assets/img/company_18.png'),
                     img4: require('../../assets/img/company_15.png'),
                 }
             }
@@ -83,7 +83,6 @@
     }
     #banner img{
         width: 100%;
-       /* margin-top: -25px;*/
     }
     #contents{
         width: 1200px;
@@ -136,7 +135,6 @@
     }
     .item img{
         width: 100%;
-        height: 208px;
     }
     .item p{
         width: 100%;
@@ -144,6 +142,9 @@
         color: #fff;
         line-height: 54px;
         text-align: center;
+        position: relative;
+        z-index: 10;
+        top: -5px;
     }
     .company_info p{
         width: 702px;

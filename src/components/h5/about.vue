@@ -63,8 +63,8 @@
               banner:require('../../assets/img/banner_about.png'),
             company:{
                 img1: require('../../assets/img/company_10.jpg'),
-                img2: require('../../assets/img/company_07.jpg'),
-                img3: require('../../assets/img/company_18.jpg'),
+                img2: require('../../assets/img/company_07.png'),
+                img3: require('../../assets/img/company_18.png'),
                 img4: require('../../assets/img/company_15.png'),
             }
           }

@@ -6,7 +6,6 @@
         </div>
         <div id="content">
 
-
             <div class="item">
                 <nav class="nav">
                     <p>联系我们</p>
@@ -25,7 +24,6 @@
             </div>
             <div class="map"></div>
         </div>
-
     </div>
 </template>
 
@@ -86,7 +84,6 @@
         margin: 0 auto;
         margin-bottom: 60px;
     }
-
     .nav {
         text-align: center;
         position: relative;

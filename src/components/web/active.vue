@@ -59,7 +59,6 @@
                 msg: {
                     banner: require('../../assets/img/odds_banner.png'),
                     bg_product1: require('../../assets/img/active_03.jpg'),
-
                 }
             }
         }
